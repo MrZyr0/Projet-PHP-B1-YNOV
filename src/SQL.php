@@ -10,21 +10,23 @@ class SQL
         $user = 'root';
         $password = '';
 
-        $this->PDO = new PDO($dsn, $user, $password);
+        $this->PDO = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     }
 
-    function queryGetData(string $Requette)
+    function queryGetData(string $sql)
     {
-        $Statement = $this->PDO->prepare($Requette);
+        $Statement = $this->PDO->prepare($sql);
 
         $Statement->execute();
 
         return $Statement->fetchAll();
     }
 
-    function queryExec(string $Requette)
+    function queryCreateData(string $sql)
     {
-        return $this->PDO->exec($Requette);
+        $Statement = $this->PDO->prepare($sql);
+
+        return $Statement->execute();
     }
 
 

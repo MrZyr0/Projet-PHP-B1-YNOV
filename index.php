@@ -1,36 +1,7 @@
 <?php
 $RacineServ = __DIR__;
 require_once $RacineServ . '/src/SQL.php';
-
-$BDD = new SQL();
-$BDD->queryExec("
-                DROP TABLE IF EXISTS prismesport;
-                CREATE DATABASE prismesport;
-
-                CREATE TABLE equipe
-                (
-                  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-                  `NomEquipe` varchar(255) DEFAULT NULL,
-                  `Victoires` varchar(255) DEFAULT 0,
-                  `Defaites` varchar(255) DEFAULT 0,
-                  PRIMARY KEY (`id`)
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-                INSERT INTO equipe (id, NomEquipe, Victoires, )
-                VALUES
-                	(1,'Boston Uprising'),
-                	(2,'Dallas Fuel'),
-                	(3,'Florida Mayhem'),
-                	(4,'Houston Outlaws'),
-                    (5,'London Spitfire');
-                    (6,'Los Angeles Gladiator');
-                    (7,'Los Angeles Valiant');
-                    (8,'New York Excelsior');
-                    (9,'Philadelphia Fusion');
-                    (10,'San Francisco Shock');
-                    (11,'Seoul Dynasty');
-                	(12,'Shanghai Dragons');
-            ");
+$SQL = new SQL();
 
 ?>
 
@@ -58,6 +29,7 @@ $BDD->queryExec("
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
           <h3>Classement</h3>
+          <a href="src/createDB.php?mode=0" class="btn btn-lg btn-secondary">SQL</a>
       </header>
 
       <main role="main" class="inner cover">
