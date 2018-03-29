@@ -13,7 +13,7 @@ class SQL
         $this->PDO = new PDO($dsn, $user, $password);
     }
 
-    function queryStatement(string $Requette)
+    function queryGetData(string $Requette)
     {
         $Statement = $this->PDO->prepare($Requette);
 
