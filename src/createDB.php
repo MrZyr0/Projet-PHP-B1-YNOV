@@ -1,6 +1,6 @@
 <?php
-$RacineServ = __DIR__;
-require_once $RacineServ . '/../src/SQL.php';
+$RacineServ = __DIR__ . '/..';
+require_once $RacineServ . '/src/SQL.php';
 
 $BDD = new SQL();
 
@@ -145,6 +145,7 @@ if ($_GET["mode"] == 2)
       </header>
 
       <main role="main" class="inner cover">
+          <a href="../index.php" class="btn btn-lg btn-secondary">Retour</a>
           <a href="?mode=1" class="btn btn-lg btn-secondary">Créer</a>
           <a href="?mode=2" class="btn btn-lg btn-secondary">RE Créer</a>
       </main>

@@ -29,11 +29,11 @@ $SQL = new SQL();
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
           <h3>Classement</h3>
-          <a href="src/createDB.php?mode=0" class="btn btn-lg btn-secondary">SQL</a>
       </header>
 
       <main role="main" class="inner cover">
-          <pre style="color: white"></pre>
+          <a href="src/createDB.php?mode=0" class="btn btn-lg btn-secondary">SQL</a>
+          <a href="src/php/createMatch.php" class="btn btn-lg btn-secondary">Gestion Matches</a>
       </main>
 
       <footer class="mastfoot mt-auto">
