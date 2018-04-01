@@ -29,8 +29,11 @@
       </header>
 
       <main role="main" class="inner cover">
-          <form class="form-inline">
-            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+          <form class="form-inline" action="createMatchSql.php" method="POST">
+              <div class="field-header">
+                  Equipe 1 :
+              </div>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="equipe1">
               <option disabled hidden>Team 1</option>
               <option value="Boston Uprising">Boston Uprising</option>
               <option value="Dallas Fuel">Dallas Fuel</option>
@@ -45,8 +48,10 @@
               <option value="Seoul Dynasty">Seoul Dynasty</option>
               <option value="Shanghai Dragons">Shanghai Dragons</option>
             </select>
-
-            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+            <div class="field-header">
+                Equipe 2 :
+            </div>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="equipe2">
               <option disabled hidden>Team 2</option>
               <option value="Boston Uprising">Boston Uprising</option>
               <option value="Dallas Fuel">Dallas Fuel</option>
@@ -61,13 +66,31 @@
               <option value="Seoul Dynasty">Seoul Dynasty</option>
               <option value="Shanghai Dragons">Shanghai Dragons</option>
             </select>
+            <div class="field-header">
+                Map :
+            </div>
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="map">
+              <option disabled hidden>Map</option>
+              <option value="Gibraltar">Gibraltar</option>
+              <option value="Dorado">Dorado</option>
+              <option value="Hollywood">Hollywood</option>
+              <option value="King\'s Row">King\'s Row</option>
+              <option value="Numbani">Numbani</option>
+              <option value="Route 66">Route 66</option>
+              <option value="Hanamura">Hanamura</option>
+              <option value="Temple d\'Anubis">Temple d\'Anubis</option>
+              <option value="Usine Volskaya">Usine Volskaya</option>
+              <option value="Ilios">Ilios</option>
+              <option value="Nepal">Nepal</option>
+              <option value="Tour de Lijiang">Tour de Lijiang</option>
+            </select>
 
             <button type="submit" class="btn btn-primary my-1">Submit</button>
           </form>      </main>
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>&copy; Julien SEIXAS & Romaine LOIRE - <?php print date("Y"); ?></p>
+          <p>&copy; Julien SEIXAS & Romain LOIRE - <?php print date("Y"); ?></p>
         </div>
       </footer>
     </div>

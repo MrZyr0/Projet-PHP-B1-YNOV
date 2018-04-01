@@ -15,25 +15,25 @@ if ($_GET["mode"] == 1)
                     (
                       `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
                       `nomEquipe` varchar(255) DEFAULT NULL,
-                      `victoires` varchar(255) DEFAULT 0,
-                      `defaites` varchar(255) DEFAULT 0,
+                      `victoires` int(11) DEFAULT 0,
+                      `defaites` int(11) DEFAULT 0,
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                    INSERT INTO equipe (id, nomEquipe)
+                    INSERT INTO equipe ( nomEquipe)
                     VALUES
-                    	(1,'Boston Uprising'),
-                    	(2,'Dallas Fuel'),
-                    	(3,'Florida Mayhem'),
-                    	(4,'Houston Outlaws'),
-                        (5,'London Spitfire'),
-                        (6,'Los Angeles Gladiator'),
-                        (7,'Los Angeles Valiant'),
-                        (8,'New York Excelsior'),
-                        (9,'Philadelphia Fusion'),
-                        (10,'San Francisco Shock'),
-                        (11,'Seoul Dynasty'),
-                    	(12,'Shanghai Dragons');
+                    	('Boston Uprising'),
+                    	('Dallas Fuel'),
+                    	('Florida Mayhem'),
+                    	('Houston Outlaws'),
+                        ('London Spitfire'),
+                        ('Los Angeles Gladiator'),
+                        ('Los Angeles Valiant'),
+                        ('New York Excelsior'),
+                        ('Philadelphia Fusion'),
+                        ('San Francisco Shock'),
+                        ('Seoul Dynasty'),
+                    	('Shanghai Dragons');
 
                     DROP TABLE IF EXISTS map;
                     CREATE TABLE map
@@ -43,20 +43,34 @@ if ($_GET["mode"] == 1)
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                    INSERT INTO map (id, mapName)
+                    INSERT INTO map ( mapName)
                     VALUES
-                        (1,'Gibraltar'),
-                        (2,'Dorado'),
-                        (3,'Hollywood'),
-                        (4,'King\'s Row'),
-                        (5,'Numbani'),
-                        (6,'Route 66'),
-                        (7,'Hanamura'),
-                        (8,'Temple d\'Anubis'),
-                        (9,'Usine Volskaya '),
-                        (10,'Ilios'),
-                        (11,'Nepal'),
-                        (12,'Tour de Lijiang');
+                        ('Gibraltar'),
+                        ('Dorado'),
+                        ('Hollywood'),
+                        ('King\'s Row'),
+                        ('Numbani'),
+                        ('Route 66'),
+                        ('Hanamura'),
+                        ('Temple d\'Anubis'),
+                        ('Usine Volskaya'),
+                        ('Ilios'),
+                        ('Nepal'),
+                        ('Tour de Lijiang');
+
+                    DROP TABLE IF EXISTS matche;
+                    CREATE TABLE matche
+                    (
+                      `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                      `equipe1` varchar(255) DEFAULT NULL,
+                      `equipe2` varchar(255) DEFAULT NULL,
+                      `map` varchar(255) DEFAULT NULL,
+                      `scoreEquipe1` int(11) DEFAULT 0,
+                      `scoreEquipe2` int(11) DEFAULT 0,
+                      PRIMARY KEY (`id`)
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
                 ");
 }
 
@@ -72,25 +86,25 @@ if ($_GET["mode"] == 2)
                     (
                       `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
                       `nomEquipe` varchar(255) DEFAULT NULL,
-                      `victoires` varchar(255) DEFAULT 0,
-                      `defaites` varchar(255) DEFAULT 0,
+                      `victoires` int(11) DEFAULT 0,
+                      `defaites` int(11) DEFAULT 0,
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                    INSERT INTO equipe (id, nomEquipe)
+                    INSERT INTO equipe (nomEquipe)
                     VALUES
-                        (1,'Boston Uprising'),
-                        (2,'Dallas Fuel'),
-                        (3,'Florida Mayhem'),
-                        (4,'Houston Outlaws'),
-                        (5,'London Spitfire'),
-                        (6,'Los Angeles Gladiator'),
-                        (7,'Los Angeles Valiant'),
-                        (8,'New York Excelsior'),
-                        (9,'Philadelphia Fusion'),
-                        (10,'San Francisco Shock'),
-                        (11,'Seoul Dynasty'),
-                        (12,'Shanghai Dragons');
+                        ('Boston Uprising'),
+                        ('Dallas Fuel'),
+                        ('Florida Mayhem'),
+                        ('Houston Outlaws'),
+                        ('London Spitfire'),
+                        ('Los Angeles Gladiator'),
+                        ('Los Angeles Valiant'),
+                        ('New York Excelsior'),
+                        ('Philadelphia Fusion'),
+                        ('San Francisco Shock'),
+                        ('Seoul Dynasty'),
+                        ('Shanghai Dragons');
 
                     DROP TABLE IF EXISTS map;
                     CREATE TABLE map
@@ -100,20 +114,33 @@ if ($_GET["mode"] == 2)
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                    INSERT INTO map (id, mapName)
+                    INSERT INTO map (mapName)
                     VALUES
-                        (1,'Gibraltar'),
-                        (2,'Dorado'),
-                        (3,'Hollywood'),
-                        (4,'King\'s Row'),
-                        (5,'Numbani'),
-                        (6,'Route 66'),
-                        (7,'Hanamura'),
-                        (8,'Temple d\'Anubis'),
-                        (9,'Usine Volskaya '),
-                        (10,'Ilios'),
-                        (11,'Nepal'),
-                        (12,'Tour de Lijiang');
+                        ('Gibraltar'),
+                        ('Dorado'),
+                        ('Hollywood'),
+                        ('King\'s Row'),
+                        ('Numbani'),
+                        ('Route 66'),
+                        ('Hanamura'),
+                        ('Temple d\'Anubis'),
+                        ('Usine Volskaya '),
+                        ('Ilios'),
+                        ('Nepal'),
+                        ('Tour de Lijiang');
+
+                    DROP TABLE IF EXISTS matche;
+                    CREATE TABLE matche
+                    (
+                      `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                      `equipe1` varchar(255) DEFAULT NULL,
+                      `equipe2` varchar(255) DEFAULT NULL,
+                      `map` varchar(255) DEFAULT NULL,
+                      `scoreEquipe1` int(11) DEFAULT 0,
+                      `scoreEquipe2` int(11) DEFAULT 0,
+                      PRIMARY KEY (`id`)
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
                 ");
 }
 
@@ -152,7 +179,7 @@ if ($_GET["mode"] == 2)
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>&copy; Julien SEIXAS & Romaine LOIRE - <?php print date("Y"); ?></p>
+          <p>&copy; Julien SEIXAS & Romain LOIRE - <?php print date("Y"); ?></p>
         </div>
       </footer>
     </div>

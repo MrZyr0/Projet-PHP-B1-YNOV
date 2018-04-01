@@ -38,7 +38,7 @@ $SQL = new SQL();
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p>&copy; Julien SEIXAS & Romaine LOIRE - <?php print date("Y"); ?></p>
+          <p>&copy; Julien SEIXAS & Romain LOIRE - <?php print date("Y"); ?></p>
         </div>
       </footer>
     </div>
