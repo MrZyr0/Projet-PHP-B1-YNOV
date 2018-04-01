@@ -74,11 +74,11 @@
               <option value="Gibraltar">Gibraltar</option>
               <option value="Dorado">Dorado</option>
               <option value="Hollywood">Hollywood</option>
-              <option value="King\'s Row">King\'s Row</option>
+              <option value="King\'s Row">King's Row</option>
               <option value="Numbani">Numbani</option>
               <option value="Route 66">Route 66</option>
               <option value="Hanamura">Hanamura</option>
-              <option value="Temple d\'Anubis">Temple d\'Anubis</option>
+              <option value="Temple d\'Anubis">Temple d'Anubis</option>
               <option value="Usine Volskaya">Usine Volskaya</option>
               <option value="Ilios">Ilios</option>
               <option value="Nepal">Nepal</option>

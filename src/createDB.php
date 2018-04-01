@@ -3,7 +3,6 @@ $RacineServ = __DIR__ . '/..';
 require_once $RacineServ . '/src/SQL.php';
 
 $BDD = new SQL();
-
 if ($_GET["mode"] == 1)
 {
     $BDD->queryCreateData("

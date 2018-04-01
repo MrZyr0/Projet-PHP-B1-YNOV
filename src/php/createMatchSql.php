@@ -15,10 +15,10 @@ var_dump($equipe2);
 var_dump($map);
 $BDD->queryCreateData("
             USE prismesport;
-            INSERT INTO matche (equipe1, equipe2, map);
+            INSERT INTO matche (equipe1, equipe2, map)
             VALUES
                     ('$equipe1', '$equipe2', '$map');
 ");
-//header("Location: $RacineServ.'src/php/createMatch.php");
+//header("Location: $RacineServ.'src/php/createMatch.php'");
 
  ?>
