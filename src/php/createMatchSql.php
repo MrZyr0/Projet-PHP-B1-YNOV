@@ -42,7 +42,20 @@ if($scoreEq2>$scoreEq1)
             WHERE nomEquipe = '$equipe1';
 ");
 }
-//header("Location: $RacineServ.'src/php/createMatch.php'");
+if($scoreEq2==$scoreEq1)
+{$BDD->queryCreateData("
+            USE prismesport;
+            INSERT INTO matche (equipe1, equipe2, map, scoreEquipe1, scoreEquipe2)
+            VALUES
+                    ('$equipe1', '$equipe2', '$map',$scoreEq1, $scoreEq2);
+
+            UPDATE equipe
+            SET nuls = nuls +1
+            WHERE nomEquipe = '$equipe2' OR nomEquipe = '$equipe1';
+
+
+");
+}
 
  ?>
  <!doctype html>
