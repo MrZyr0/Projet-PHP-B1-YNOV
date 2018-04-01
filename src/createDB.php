@@ -16,6 +16,7 @@ if ($_GET["mode"] == 1)
                       `nomEquipe` varchar(255) DEFAULT NULL,
                       `victoires` int(11) DEFAULT 0,
                       `defaites` int(11) DEFAULT 0,
+                      `goalAverage` int(11) DEFAULT 0,
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -87,6 +88,7 @@ if ($_GET["mode"] == 2)
                       `nomEquipe` varchar(255) DEFAULT NULL,
                       `victoires` int(11) DEFAULT 0,
                       `defaites` int(11) DEFAULT 0,
+                       `goalAverage` int(11) DEFAULT 0,
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

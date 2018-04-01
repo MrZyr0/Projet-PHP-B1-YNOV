@@ -84,10 +84,31 @@
               <option value="Nepal">Nepal</option>
               <option value="Tour de Lijiang">Tour de Lijiang</option>
             </select>
-
+            <div class="field-header">
+                Score Equipe 1 :
+            </div>
+          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="scoreEquipe1">
+            <option disabled hidden>SCORE Team 1</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <div class="field-header">
+              Score Equipe 2 :
+          </div>
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="scoreEquipe2">
+          <option disabled hidden>SCORE Team 2</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
             <button type="submit" class="btn btn-primary my-1">Submit</button>
           </form>      </main>
-
+<a href="/../Projet-PHP/index.php" class="btn btn-lg btn-secondary">Retour menu principal</a>
       <footer class="mastfoot mt-auto">
         <div class="inner">
           <p>&copy; Julien SEIXAS & Romain LOIRE - <?php print date("Y"); ?></p>
