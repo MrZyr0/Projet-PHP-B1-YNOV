@@ -22,7 +22,7 @@ if($scoreEq1>$scoreEq2)
             WHERE nomEquipe = '$equipe1';
 
             UPDATE equipe
-            SET defaites = defaites + 1, goalAverage = goalAverage + ($scoreEq2 - $scoreEq1)
+            SET defaites = defaites + 1, goalAverage = goalAverage - ($scoreEq1 - $scoreEq2)
             WHERE nomEquipe = '$equipe2';
 ");
 }
@@ -34,11 +34,11 @@ if($scoreEq2>$scoreEq1)
                     ('$equipe1', '$equipe2', '$map',$scoreEq1, $scoreEq2);
 
             UPDATE equipe
-            SET victoires = victoires + 1, goalAverage = goalAverage + ($scoreEq1 - $scoreEq2)
+            SET victoires = victoires + 1, goalAverage = goalAverage + ($scoreEq2 - $scoreEq1)
             WHERE nomEquipe = '$equipe2';
 
             UPDATE equipe
-            SET defaites = defaites + 1 goalAverage = goalAverage + ($scoreEq2 - $scoreEq1)
+            SET defaites = defaites + 1, goalAverage = goalAverage - ($scoreEq2 - $scoreEq1)
             WHERE nomEquipe = '$equipe1';
 ");
 }
