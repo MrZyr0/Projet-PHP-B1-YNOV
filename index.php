@@ -22,6 +22,9 @@ $SQL = new SQL();
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+
+    <!-- CSS Perso -->
+    <link rel="stylesheet" href="src/css/master.css">
   </head>
 
   <body class="text-center">
@@ -32,8 +35,8 @@ $SQL = new SQL();
       </header>
 
       <main role="main" class="inner cover">
-          <a href="src/createDB.php?mode=0" class="btn btn-lg btn-secondary">SQL</a>
-          <a href="src/php/createMatch.php" class="btn btn-lg btn-secondary">Gestion Matches</a>
+          <a href="src/php/createDB.php?mode=0" class="btn btn-lg btn-secondary">Gestion de la BDD</a>
+          <a href="src/php/createMatch.php" class="btn btn-lg btn-secondary btn-accueil">Gestion Matches</a>
       </main>
 
       <footer class="mastfoot mt-auto">
