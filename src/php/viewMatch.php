@@ -1,10 +1,3 @@
-<?php
-$RacineServ = __DIR__;
-require_once $RacineServ . '/src/php/SQL.php';
-$SQL = new SQL();
-?>
-
-
 <!doctype html>
 <html lang="fr">
   <head>
@@ -34,8 +27,7 @@ $SQL = new SQL();
       </header>
 
       <main role="main" class="inner cover">
-          <a href="src/php/createDB.php?mode=0" class="btn btn-lg btn-secondary">Gestion de la BDD</a>
-          <a href="src/php/gestionMatch.php" class="btn btn-lg btn-secondary btn-accueil">Gestion des Matches</a>
+          <a href="gestionMatch.php" class="btn btn-lg btn-secondary">Retour</a>
       </main>
 
       <footer class="mastfoot mt-auto">

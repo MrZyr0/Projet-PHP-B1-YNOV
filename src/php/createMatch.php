@@ -108,7 +108,7 @@
         </select>
             <button type="submit" class="btn btn-primary my-1">Submit</button>
           </form>      </main>
-<a href="/../Projet-PHP/index.php" class="btn btn-lg btn-secondary">Retour menu principal</a>
+          <a href="gestionMatch.php" class="btn btn-lg btn-secondary">Retour</a>
       <footer class="mastfoot mt-auto">
         <div class="inner">
           <p>&copy; Julien SEIXAS & Romain LOIRE - <?php print date("Y"); ?></p>

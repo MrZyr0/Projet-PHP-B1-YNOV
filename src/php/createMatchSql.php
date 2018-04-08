@@ -1,6 +1,5 @@
 <?php
-$RacineServ = __DIR__ . '/../..';
-require_once $RacineServ . '/src/SQL.php';
+require_once 'SQL.php';
 
 $BDD = new SQL();
 

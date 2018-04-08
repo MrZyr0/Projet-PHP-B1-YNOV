@@ -29,7 +29,6 @@ class SQL
         return $Statement->execute();
     }
 
-
 }
 
 ?>

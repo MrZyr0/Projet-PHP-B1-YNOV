@@ -1,7 +1,7 @@
 <?php
-$RacineServ = __DIR__ . '/..';
-require_once $RacineServ . '/src/SQL.php';
+require_once 'SQL.php';
 
+$SupprOK = false;
 $BDD = new SQL();
 if ($_GET["mode"] == 1)
 {
@@ -73,6 +73,7 @@ if ($_GET["mode"] == 1)
 
 
                 ");
+    $SupprOK = true;
 }
 
 if ($_GET["mode"] == 2)
@@ -145,6 +146,7 @@ if ($_GET["mode"] == 2)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
                 ");
+    $SupprOK = true;
 }
 
 ?>
@@ -175,7 +177,15 @@ if ($_GET["mode"] == 2)
       </header>
 
       <main role="main" class="inner cover">
-          <a href="../index.php" class="btn btn-lg btn-secondary">Retour</a>
+          <?php
+          if ($SupprOK === true)
+            {
+                echo "<div class=\"alert alert-success\" role=\"alert\">";
+                echo "Base de donnée crée ! 👌";
+                echo "</div>";
+            }
+            ?>
+          <a href="../../index.php" class="btn btn-lg btn-secondary">Retour</a>
           <a href="?mode=1" class="btn btn-lg btn-secondary">Créer</a>
           <a href="?mode=2" class="btn btn-lg btn-secondary">RE Créer</a>
       </main>
