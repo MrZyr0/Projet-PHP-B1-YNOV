@@ -18,7 +18,7 @@ class SQL
         $Statement = $this->PDO->prepare($sql);
 
         $Statement->execute();
-
+        
         return $Statement->fetchAll();
     }
 

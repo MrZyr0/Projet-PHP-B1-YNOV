@@ -1,3 +1,11 @@
+<?php
+
+require_once 'SQL.php';
+
+$BDD = new SQL();
+$Matchs = $BDD->queryGetData("USE prismesport; SELECT nomEquipe, victoires, defaites, nuls, goalAverage FROM equipe ORDER BY victoires DESC, nuls DESC, goalAverage DESC");
+?>
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -27,6 +35,7 @@
       </header>
 
       <main role="main" class="inner cover">
+          <p><?php var_dump($Matchs)?></p>
           <a href="gestionMatch.php" class="btn btn-lg btn-secondary">Retour</a>
       </main>
 
