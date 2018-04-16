@@ -6,7 +6,7 @@ class SQL
 
     function __construct()
     {
-        $dsn = 'mysql:host=localhost';
+        $dsn = 'mysql:dbname=prismesport;host=localhost';
         $user = 'root';
         $password = '';
 
@@ -18,7 +18,7 @@ class SQL
         $Statement = $this->PDO->prepare($sql);
 
         $Statement->execute();
-        
+
         return $Statement->fetchAll();
     }
 
