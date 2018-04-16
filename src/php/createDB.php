@@ -18,23 +18,24 @@ if ($_GET["mode"] == 1)
                       `defaites` int(11) DEFAULT 0,
                       `nuls` int(11) DEFAULT 0,
                       `goalAverage` int(11) DEFAULT 0,
+                      `image` varchar(255) DEFAULT NULL,
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                    INSERT INTO equipe ( nomEquipe)
+                    INSERT INTO equipe ( nomEquipe, image)
                     VALUES
-                    	('Boston Uprising'),
-                    	('Dallas Fuel'),
-                    	('Florida Mayhem'),
-                    	('Houston Outlaws'),
-                        ('London Spitfire'),
-                        ('Los Angeles Gladiator'),
-                        ('Los Angeles Valiant'),
-                        ('New York Excelsior'),
-                        ('Philadelphia Fusion'),
-                        ('San Francisco Shock'),
-                        ('Seoul Dynasty'),
-                    	('Shanghai Dragons');
+                    	('Boston Uprising','https://image.noelshack.com/fichiers/2018/16/1/1523909912-bostonuprising.png'),
+                    	('Dallas Fuel','https://image.noelshack.com/fichiers/2018/16/1/1523909934-dallasfuel.png'),
+                    	('Florida Mayhem','https://image.noelshack.com/fichiers/2018/16/1/1523909943-floridamahyem.png'),
+                    	('Houston Outlaws','https://image.noelshack.com/fichiers/2018/16/1/1523909954-houstonoutlaws.png'),
+                        ('London Spitfire','https://image.noelshack.com/fichiers/2018/16/1/1523909980-londonspitfire.png'),
+                        ('Los Angeles Gladiator','https://image.noelshack.com/fichiers/2018/16/1/1523909967-lagladiators.png'),
+                        ('Los Angeles Valiant','https://image.noelshack.com/fichiers/2018/16/1/1523909992-losangelesvalliant.png'),
+                        ('New York Excelsior','https://image.noelshack.com/fichiers/2018/16/1/1523910002-newyorkexelsior.png'),
+                        ('Philadelphia Fusion','https://image.noelshack.com/fichiers/2018/16/1/1523910015-philadelphiafusion.png'),
+                        ('San Francisco Shock','https://image.noelshack.com/fichiers/2018/16/1/1523910026-sanfranciscoshock.png'),
+                        ('Seoul Dynasty','https://image.noelshack.com/fichiers/2018/16/1/1523910043-seouldynasty.png'),
+                    	('Shanghai Dragons','https://image.noelshack.com/fichiers/2018/16/1/1523910054-shanghaidragons.png');
 
                     DROP TABLE IF EXISTS map;
                     CREATE TABLE map
@@ -92,23 +93,24 @@ if ($_GET["mode"] == 2)
                       `defaites` int(11) DEFAULT 0,
                       `nuls` int(11) DEFAULT 0,
                        `goalAverage` int(11) DEFAULT 0,
+                       `image` varchar(255) DEFAULT NULL,
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
                     INSERT INTO equipe (nomEquipe)
                     VALUES
-                        ('Boston Uprising'),
-                        ('Dallas Fuel'),
-                        ('Florida Mayhem'),
-                        ('Houston Outlaws'),
-                        ('London Spitfire'),
-                        ('Los Angeles Gladiator'),
-                        ('Los Angeles Valiant'),
-                        ('New York Excelsior'),
-                        ('Philadelphia Fusion'),
-                        ('San Francisco Shock'),
-                        ('Seoul Dynasty'),
-                        ('Shanghai Dragons');
+                    ('Boston Uprising','https://image.noelshack.com/fichiers/2018/16/1/1523909912-bostonuprising.png'),
+                    ('Dallas Fuel','https://image.noelshack.com/fichiers/2018/16/1/1523909934-dallasfuel.png'),
+                    ('Florida Mayhem','https://image.noelshack.com/fichiers/2018/16/1/1523909943-floridamahyem.png'),
+                    ('Houston Outlaws','https://image.noelshack.com/fichiers/2018/16/1/1523909954-houstonoutlaws.png'),
+                    ('London Spitfire','https://image.noelshack.com/fichiers/2018/16/1/1523909980-londonspitfire.png'),
+                    ('Los Angeles Gladiator','https://image.noelshack.com/fichiers/2018/16/1/1523909967-lagladiators.png'),
+                    ('Los Angeles Valiant','https://image.noelshack.com/fichiers/2018/16/1/1523909992-losangelesvalliant.png'),
+                    ('New York Excelsior','https://image.noelshack.com/fichiers/2018/16/1/1523910002-newyorkexelsior.png'),
+                    ('Philadelphia Fusion','https://image.noelshack.com/fichiers/2018/16/1/1523910015-philadelphiafusion.png'),
+                    ('San Francisco Shock','https://image.noelshack.com/fichiers/2018/16/1/1523910026-sanfranciscoshock.png'),
+                    ('Seoul Dynasty','https://image.noelshack.com/fichiers/2018/16/1/1523910043-seouldynasty.png'),
+                    ('Shanghai Dragons','https://image.noelshack.com/fichiers/2018/16/1/1523910054-shanghaidragons.png');
 
                     DROP TABLE IF EXISTS map;
                     CREATE TABLE map

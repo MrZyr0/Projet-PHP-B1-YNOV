@@ -4,7 +4,9 @@ require_once 'SQL.php';
 
 $BDD = new SQL();
 $matchs = $BDD->queryGetData("
-SELECT equipe1, equipe2, scoreEquipe1, scoreEquipe2 FROM matche ");
+    SELECT equipe1, equipe2, scoreEquipe1, scoreEquipe2
+    FROM matche
+");
 ?>
 
 <!doctype html>
@@ -36,13 +38,15 @@ SELECT equipe1, equipe2, scoreEquipe1, scoreEquipe2 FROM matche ");
       </header>
 
       <main role="main" class="inner cover">
-          <p><?php
+          <p>
+              <?php
 
             foreach ($matchs as  $match) {
               print $match['equipe1']." ".$match['scoreEquipe1']." ".$match["scoreEquipe2"]." ".$match["equipe2"];
               echo '<br>';
           }
-           ?></p>
+           ?>
+       </p>
           <a href="gestionMatch.php" class="btn btn-lg btn-secondary">Retour</a>
       </main>
 

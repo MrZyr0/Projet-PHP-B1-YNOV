@@ -45,7 +45,6 @@ $equipes=$BDD->queryGetData("
               Nom equipe :
               <br>
               <?php
-
                 foreach ($equipes as  $equipe) {
                   print $equipe['nomEquipe'];
                   echo '<br>';
