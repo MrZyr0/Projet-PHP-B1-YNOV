@@ -3,7 +3,8 @@
 require_once 'SQL.php';
 
 $BDD = new SQL();
-$Matchs = $BDD->queryGetData("USE prismesport; SELECT nomEquipe, victoires, defaites, nuls, goalAverage FROM equipe ORDER BY victoires DESC, nuls DESC, goalAverage DESC");
+$matchs = $BDD->queryGetData("
+SELECT equipe1, equipe2, scoreEquipe1, scoreEquipe2 FROM matche ");
 ?>
 
 <!doctype html>
@@ -31,11 +32,17 @@ $Matchs = $BDD->queryGetData("USE prismesport; SELECT nomEquipe, victoires, defa
 
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
-          <h3>Classement</h3>
+          <h3>Historique des matchs</h3>
       </header>
 
       <main role="main" class="inner cover">
-          <p><?php var_dump($Matchs)?></p>
+          <p><?php
+
+            foreach ($matchs as  $match) {
+              print $match['equipe1']." ".$match['scoreEquipe1']." ".$match["scoreEquipe2"]." ".$match["equipe2"];
+              echo '<br>';
+          }
+           ?></p>
           <a href="gestionMatch.php" class="btn btn-lg btn-secondary">Retour</a>
       </main>
 
