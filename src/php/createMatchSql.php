@@ -73,6 +73,9 @@ if($scoreEq2==$scoreEq1)
 
      <!-- Custom styles for this template -->
      <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+
+     <!-- CSS Perso -->
+     <link rel="stylesheet" href="../css/master.css">
    </head>
 
    <body class="text-center">

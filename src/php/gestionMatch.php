@@ -16,7 +16,7 @@
     <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
 
     <!-- CSS Perso -->
-    <link rel="stylesheet" href="src/css/master.css">
+    <link rel="stylesheet" href="../css/master.css">
   </head>
 
   <body class="text-center">
@@ -26,7 +26,7 @@
           <h3>Classement</h3>
       </header>
 
-      <main role="main" class="inner cover">
+      <main role="main" class="inner cover menu">
           <a href="../../index.php" class="btn btn-lg btn-secondary">Retour</a>
           <a href="createMatch.php" class="btn btn-lg btn-secondary">Créer un matche</a>
           <a href="viewMatch.php" class="btn btn-lg btn-secondary btn-accueil">Voir les matches</a>
