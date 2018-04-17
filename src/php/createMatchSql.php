@@ -1,7 +1,7 @@
 <?php
 require_once 'SQL.php';
 
-$BDD = new SQL();
+$BDD = new SQL("");
 
 $equipe1=$_POST['equipe1'];
 $equipe2=$_POST['equipe2'];

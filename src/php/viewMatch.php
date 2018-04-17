@@ -2,7 +2,7 @@
 
 require_once 'SQL.php';
 
-$BDD = new SQL();
+$BDD = new SQL("");
 $matchs = $BDD->queryGetData("
     SELECT equipe1, equipe2, scoreEquipe1, scoreEquipe2
     FROM matche

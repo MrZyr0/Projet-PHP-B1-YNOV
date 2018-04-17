@@ -2,7 +2,7 @@
 require_once 'SQL.php';
 
 $SupprOK = false;
-$BDD = new SQL();
+$BDD = new SQL("");
 if ($_GET["mode"] == 1)
 {
     $BDD->queryCreateData("
@@ -22,7 +22,7 @@ if ($_GET["mode"] == 1)
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                    INSERT INTO equipe ( nomEquipe, image)
+                    INSERT INTO equipe (nomEquipe, image)
                     VALUES
                     	('Boston Uprising','https://image.noelshack.com/fichiers/2018/16/1/1523909912-bostonuprising.png'),
                     	('Dallas Fuel','https://image.noelshack.com/fichiers/2018/16/1/1523909934-dallasfuel.png'),
@@ -45,7 +45,7 @@ if ($_GET["mode"] == 1)
                       PRIMARY KEY (`id`)
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                    INSERT INTO map ( mapName)
+                    INSERT INTO map (mapName)
                     VALUES
                         ('Gibraltar'),
                         ('Dorado'),
@@ -81,73 +81,74 @@ if ($_GET["mode"] == 2)
 {
     $BDD->queryCreateData("DROP DATABASE IF EXISTS prismesport;");
     $BDD->queryCreateData("
-                    CREATE DATABASE IF NOT EXISTS prismesport;
-                    USE prismesport;
+                            CREATE DATABASE IF NOT EXISTS prismesport;
+                            USE prismesport;
 
-                    DROP TABLE IF EXISTS equipe;
-                    CREATE TABLE equipe
-                    (
-                      `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-                      `nomEquipe` varchar(255) DEFAULT NULL,
-                      `victoires` int(11) DEFAULT 0,
-                      `defaites` int(11) DEFAULT 0,
-                      `nuls` int(11) DEFAULT 0,
-                       `goalAverage` int(11) DEFAULT 0,
-                       `image` varchar(255) DEFAULT NULL,
-                      PRIMARY KEY (`id`)
-                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+                            DROP TABLE IF EXISTS equipe;
+                            CREATE TABLE equipe
+                            (
+                              `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                              `nomEquipe` varchar(255) DEFAULT NULL,
+                              `victoires` int(11) DEFAULT 0,
+                              `defaites` int(11) DEFAULT 0,
+                              `nuls` int(11) DEFAULT 0,
+                              `goalAverage` int(11) DEFAULT 0,
+                              `image` varchar(255) DEFAULT NULL,
+                              PRIMARY KEY (`id`)
+                            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                    INSERT INTO equipe (nomEquipe)
-                    VALUES
-                    ('Boston Uprising','https://image.noelshack.com/fichiers/2018/16/1/1523909912-bostonuprising.png'),
-                    ('Dallas Fuel','https://image.noelshack.com/fichiers/2018/16/1/1523909934-dallasfuel.png'),
-                    ('Florida Mayhem','https://image.noelshack.com/fichiers/2018/16/1/1523909943-floridamahyem.png'),
-                    ('Houston Outlaws','https://image.noelshack.com/fichiers/2018/16/1/1523909954-houstonoutlaws.png'),
-                    ('London Spitfire','https://image.noelshack.com/fichiers/2018/16/1/1523909980-londonspitfire.png'),
-                    ('Los Angeles Gladiator','https://image.noelshack.com/fichiers/2018/16/1/1523909967-lagladiators.png'),
-                    ('Los Angeles Valiant','https://image.noelshack.com/fichiers/2018/16/1/1523909992-losangelesvalliant.png'),
-                    ('New York Excelsior','https://image.noelshack.com/fichiers/2018/16/1/1523910002-newyorkexelsior.png'),
-                    ('Philadelphia Fusion','https://image.noelshack.com/fichiers/2018/16/1/1523910015-philadelphiafusion.png'),
-                    ('San Francisco Shock','https://image.noelshack.com/fichiers/2018/16/1/1523910026-sanfranciscoshock.png'),
-                    ('Seoul Dynasty','https://image.noelshack.com/fichiers/2018/16/1/1523910043-seouldynasty.png'),
-                    ('Shanghai Dragons','https://image.noelshack.com/fichiers/2018/16/1/1523910054-shanghaidragons.png');
+                            INSERT INTO equipe (nomEquipe, image)
+                            VALUES
+                                ('Boston Uprising','https://image.noelshack.com/fichiers/2018/16/1/1523909912-bostonuprising.png'),
+                                ('Dallas Fuel','https://image.noelshack.com/fichiers/2018/16/1/1523909934-dallasfuel.png'),
+                                ('Florida Mayhem','https://image.noelshack.com/fichiers/2018/16/1/1523909943-floridamahyem.png'),
+                                ('Houston Outlaws','https://image.noelshack.com/fichiers/2018/16/1/1523909954-houstonoutlaws.png'),
+                                ('London Spitfire','https://image.noelshack.com/fichiers/2018/16/1/1523909980-londonspitfire.png'),
+                                ('Los Angeles Gladiator','https://image.noelshack.com/fichiers/2018/16/1/1523909967-lagladiators.png'),
+                                ('Los Angeles Valiant','https://image.noelshack.com/fichiers/2018/16/1/1523909992-losangelesvalliant.png'),
+                                ('New York Excelsior','https://image.noelshack.com/fichiers/2018/16/1/1523910002-newyorkexelsior.png'),
+                                ('Philadelphia Fusion','https://image.noelshack.com/fichiers/2018/16/1/1523910015-philadelphiafusion.png'),
+                                ('San Francisco Shock','https://image.noelshack.com/fichiers/2018/16/1/1523910026-sanfranciscoshock.png'),
+                                ('Seoul Dynasty','https://image.noelshack.com/fichiers/2018/16/1/1523910043-seouldynasty.png'),
+                                ('Shanghai Dragons','https://image.noelshack.com/fichiers/2018/16/1/1523910054-shanghaidragons.png');
 
-                    DROP TABLE IF EXISTS map;
-                    CREATE TABLE map
-                    (
-                      `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-                      `mapName` varchar(255) DEFAULT NULL,
-                      PRIMARY KEY (`id`)
-                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+                            DROP TABLE IF EXISTS map;
+                            CREATE TABLE map
+                            (
+                              `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                              `mapName` varchar(255) DEFAULT NULL,
+                              PRIMARY KEY (`id`)
+                            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                    INSERT INTO map (mapName)
-                    VALUES
-                        ('Gibraltar'),
-                        ('Dorado'),
-                        ('Hollywood'),
-                        ('King\'s Row'),
-                        ('Numbani'),
-                        ('Route 66'),
-                        ('Hanamura'),
-                        ('Temple d\'Anubis'),
-                        ('Usine Volskaya '),
-                        ('Ilios'),
-                        ('Nepal'),
-                        ('Tour de Lijiang');
+                            INSERT INTO map (mapName)
+                            VALUES
+                                ('Gibraltar'),
+                                ('Dorado'),
+                                ('Hollywood'),
+                                ('King\'s Row'),
+                                ('Numbani'),
+                                ('Route 66'),
+                                ('Hanamura'),
+                                ('Temple d\'Anubis'),
+                                ('Usine Volskaya'),
+                                ('Ilios'),
+                                ('Nepal'),
+                                ('Tour de Lijiang');
 
-                    DROP TABLE IF EXISTS matche;
-                    CREATE TABLE matche
-                    (
-                      `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-                      `equipe1` varchar(255) DEFAULT NULL,
-                      `equipe2` varchar(255) DEFAULT NULL,
-                      `map` varchar(255) DEFAULT NULL,
-                      `scoreEquipe1` int(11) DEFAULT 0,
-                      `scoreEquipe2` int(11) DEFAULT 0,
-                      PRIMARY KEY (`id`)
-                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+                            DROP TABLE IF EXISTS matche;
+                            CREATE TABLE matche
+                            (
+                              `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+                              `equipe1` varchar(255) DEFAULT NULL,
+                              `equipe2` varchar(255) DEFAULT NULL,
+                              `map` varchar(255) DEFAULT NULL,
+                              `scoreEquipe1` int(11) DEFAULT 0,
+                              `scoreEquipe2` int(11) DEFAULT 0,
+                              PRIMARY KEY (`id`)
+                            ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                ");
+
+                        ");
     $SupprOK = true;
 }
 

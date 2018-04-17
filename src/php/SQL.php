@@ -4,9 +4,9 @@ class SQL
 {
     private $PDO = null;
 
-    function __construct()
+    function __construct(string $DB)
     {
-        $dsn = 'mysql:dbname=prismesport;host=localhost';
+        $dsn = 'mysql:dbname=' . $DB . ';host=localhost';
         $user = 'root';
         $password = '';
 

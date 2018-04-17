@@ -1,7 +1,7 @@
 <?php
 $RacineServ = __DIR__;
 require_once $RacineServ . '/src/php/SQL.php';
-$SQL = new SQL();
+$SQL = new SQL("");
 ?>
 
 

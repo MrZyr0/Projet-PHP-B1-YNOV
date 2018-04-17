@@ -1,9 +1,10 @@
 <?php
 require_once 'SQL.php';
 
-$BDD = new SQL();
+$BDD = new SQL("prismesport");
 
-$equipes=$BDD->queryGetData("
+
+$equipes=$BDD->queryGetData(" 
     SELECT nomEquipe, victoires, nuls ,goalAverage
     FROM equipe
     ORDER BY victoires DESC, nuls DESC,goalAverage DESC;
