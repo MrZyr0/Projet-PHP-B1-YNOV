@@ -170,6 +170,9 @@ if ($_GET["mode"] == 2)
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+
+    <!-- CSS Perso -->
+    <link rel="stylesheet" href="../css/master.css">
   </head>
 
   <body class="text-center">
@@ -179,7 +182,7 @@ if ($_GET["mode"] == 2)
           <h3>Gestion de la BDD</h3>
       </header>
 
-      <main role="main" class="inner cover">
+      <main role="main" class="inner cover menu">
           <?php
           if ($SupprOK === true)
             {

@@ -4,7 +4,7 @@ require_once 'SQL.php';
 $BDD = new SQL("prismesport");
 
 
-$equipes=$BDD->queryGetData(" 
+$equipes=$BDD->queryGetData("
     SELECT nomEquipe, victoires, nuls ,goalAverage
     FROM equipe
     ORDER BY victoires DESC, nuls DESC,goalAverage DESC;
@@ -28,7 +28,7 @@ $equipes=$BDD->queryGetData("
     <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
 
     <!-- CSS Perso -->
-    <link rel="stylesheet" href="src/css/master.css">
+    <link rel="stylesheet" href="../css/master.css">
   </head>
 
   <body class="text-center">

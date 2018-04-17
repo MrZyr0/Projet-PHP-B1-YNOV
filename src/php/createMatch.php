@@ -19,6 +19,9 @@
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+
+    <!-- CSS Perso -->
+    <link rel="stylesheet" href="../css/master.css">
   </head>
 
   <body class="text-center">
@@ -28,7 +31,7 @@
           <h3>Création de matches</h3>
       </header>
 
-      <main role="main" class="inner cover">
+      <main role="main" class="inner cover menu">
           <form class="form-inline" action="createMatchSql.php" method="POST">
             <div class="field-header">
                 Equipe 1 :

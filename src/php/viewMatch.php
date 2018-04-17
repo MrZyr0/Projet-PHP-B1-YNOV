@@ -2,7 +2,7 @@
 
 require_once 'SQL.php';
 
-$BDD = new SQL("");
+$BDD = new SQL("prismesport");
 $matchs = $BDD->queryGetData("
     SELECT equipe1, equipe2, scoreEquipe1, scoreEquipe2
     FROM matche
@@ -27,7 +27,7 @@ $matchs = $BDD->queryGetData("
     <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
 
     <!-- CSS Perso -->
-    <link rel="stylesheet" href="src/css/master.css">
+    <link rel="stylesheet" href="../css/master.css">
   </head>
 
   <body class="text-center">
@@ -37,7 +37,7 @@ $matchs = $BDD->queryGetData("
           <h3>Historique des matchs</h3>
       </header>
 
-      <main role="main" class="inner cover">
+      <main role="main" class="inner cover menu">
           <p>
               <?php
 
