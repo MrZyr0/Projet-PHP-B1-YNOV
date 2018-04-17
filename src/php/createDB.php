@@ -1,9 +1,10 @@
 <?php
-require_once 'SQL.php';
+require_once 'func/SQL.php';
+require_once 'func/selectBackground.php';
 
-$SupprOK = false;
-$BDD = new SQL("");
-if ($_GET["mode"] == 1)
+$queryOK = false;
+$BDD = new SQL();
+if (isset($_GET["mode"]) && $_GET["mode"] == 1)
 {
     $BDD->queryCreateData("
                             CREATE DATABASE IF NOT EXISTS prismesport;
@@ -97,10 +98,10 @@ if ($_GET["mode"] == 1)
                                 ('Tour de Lijiang','https://i.pinimg.com/originals/a9/cb/a4/a9cba409fa00cec80632285e7bc650bb.jpg'),
                                 ('Usine Volskaya','https://gamewave.fr/static/images/medias/upload/Overwatch/volskaya-screenshot-003.3fvpT.jpg');
                         ");
-    $SupprOK = true;
+    $queryOK = true;
 }
 
-if ($_GET["mode"] == 2)
+if (isset($_GET["mode"]) && $_GET["mode"] == 2)
 {
     $BDD->queryCreateData("DROP DATABASE IF EXISTS prismesport;");
     $BDD->queryCreateData("
@@ -195,18 +196,8 @@ if ($_GET["mode"] == 2)
                                 ('Tour de Lijiang','https://i.pinimg.com/originals/a9/cb/a4/a9cba409fa00cec80632285e7bc650bb.jpg'),
                                 ('Usine Volskaya','https://gamewave.fr/static/images/medias/upload/Overwatch/volskaya-screenshot-003.3fvpT.jpg');
                         ");
-    $SupprOK = true;
+    $queryOK = true;
 }
-
-
-$BDD = new SQL("prismesport");
-
-$backgroundListe = $BDD->queryGetData("
-    SELECT backgroundUrl
-    FROM background;
-");
-
-$backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
 
 ?>
 
@@ -248,7 +239,14 @@ $backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
 
       <main role="main" class="inner cover menu">
           <?php
-          if ($SupprOK === true)
+          if (isset($_GET["DB"]) && $_GET["DB"] == "false")
+          {
+              echo "<div class=\"alert alert-danger\" role=\"alert\">";
+              echo "⚠️ La base de donnée n'est pas disponible, si c'est une première installation merci de cliquer sur Créer si vous avez un quelconque problème avec la Base de donnée vous pouvez la recréer avec le bouton ci-dessous ⚠️";
+              echo "</div>";
+          }
+
+          if ($queryOK === true)
             {
                 echo "<div class=\"alert alert-success\" role=\"alert\">";
                 echo "Base de donnée crée ! 👌";

@@ -4,7 +4,7 @@ class SQL
 {
     private $PDO = null;
 
-    function __construct(string $DB)
+    function __construct(string $DB = "prismesport")
     {
         $dsn = 'mysql:dbname=' . $DB . ';host=localhost';
         $user = 'root';

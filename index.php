@@ -1,14 +1,7 @@
 <?php
     $RacineServ = __DIR__;
-    require_once $RacineServ . '/src/php/SQL.php';
-    $BDD = new SQL("prismesport");
-
-    $backgroundListe = $BDD->queryGetData("
-        SELECT backgroundUrl
-        FROM background;
-    ");
-
-    $backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
+    require_once $RacineServ . '/src/php/func/selectBackground.php';
+    // var_dump($backgroundURL);
 ?>
 
 <!doctype html>
@@ -18,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Projet de PHP">
     <meta name="author" content="Julien SEIXAS & Romaine LOIRE">
-    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+    <link rel="icon" href="src/images/favicon.ico">
 
     <title>Classement Overwatch</title>
 
@@ -31,7 +24,7 @@
     <!-- CSS Perso -->
     <link rel="stylesheet" href="src/css/master.css">
     <style>
-        html, body
+        body
         {
             background: url(<?=$backgroundURL?>) no-repeat center fixed;
             background-size: cover;
