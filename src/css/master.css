@@ -1,14 +1,9 @@
-.btn-accueil
-{
-    margin-left: 100px;
-}
-.classement
+.menuHome
 {
     display: flex;
-    flex-direction: row;
 }
-.nomEquipe
+
+.menuHome *
 {
-    display: flex;
-    flex-direction: row;
+    margin-left: 15px;
 }

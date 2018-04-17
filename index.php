@@ -1,7 +1,7 @@
 <?php
-$RacineServ = __DIR__;
-require_once $RacineServ . '/src/php/SQL.php';
-$SQL = new SQL("");
+    $RacineServ = __DIR__;
+    require_once $RacineServ . '/src/php/SQL.php';
+    $SQL = new SQL("");
 ?>
 
 
@@ -33,11 +33,10 @@ $SQL = new SQL("");
           <h3>Classement</h3>
       </header>
 
-      <main role="main" class="inner cover">
+      <main role="main" class="inner cover menuHome">
           <a href="src/php/createDB.php?mode=0" class="btn btn-lg btn-secondary">Gestion de la BDD</a>
           <a href="src/php/gestionMatch.php" class="btn btn-lg btn-secondary btn-accueil">Gestion des Matches</a>
           <a href="src/php/classement.php" class="btn btn-lg btn-secondary btn-accueil">Classement</a>
-
       </main>
 
       <footer class="mastfoot mt-auto">
