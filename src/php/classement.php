@@ -9,6 +9,14 @@ $equipes=$BDD->queryGetData("
     FROM equipe
     ORDER BY victoires DESC, nuls DESC,goalAverage DESC;
 ");
+
+$backgroundListe = $BDD->queryGetData("
+    SELECT backgroundUrl
+    FROM background;
+");
+
+$backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
+
  ?>
 <!doctype html>
 <html lang="fr">
@@ -29,6 +37,14 @@ $equipes=$BDD->queryGetData("
 
     <!-- CSS Perso -->
     <link rel="stylesheet" href="../css/master.css">
+    <style>
+        html, body
+        {
+            background: url(<?=$backgroundURL?>) no-repeat center fixed;
+            background-size: cover;
+        }
+    </style>
+
   </head>
 
   <body class="text-center">

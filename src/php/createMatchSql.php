@@ -1,7 +1,7 @@
 <?php
 require_once 'SQL.php';
 
-$BDD = new SQL("");
+$BDD = new SQL("prismesport");
 
 $equipe1=$_POST['equipe1'];
 $equipe2=$_POST['equipe2'];
@@ -11,7 +11,6 @@ $scoreEq2=$_POST['scoreEquipe2'];
 
 if($scoreEq1>$scoreEq2)
 {$BDD->queryCreateData("
-            USE prismesport;
             INSERT INTO matche (equipe1, equipe2, map, scoreEquipe1, scoreEquipe2)
             VALUES
                     ('$equipe1', '$equipe2', '$map',$scoreEq1, $scoreEq2);
@@ -27,7 +26,6 @@ if($scoreEq1>$scoreEq2)
 }
 if($scoreEq2>$scoreEq1)
 {$BDD->queryCreateData("
-            USE prismesport;
             INSERT INTO matche (equipe1, equipe2, map, scoreEquipe1, scoreEquipe2)
             VALUES
                     ('$equipe1', '$equipe2', '$map',$scoreEq1, $scoreEq2);
@@ -43,7 +41,6 @@ if($scoreEq2>$scoreEq1)
 }
 if($scoreEq2==$scoreEq1)
 {$BDD->queryCreateData("
-            USE prismesport;
             INSERT INTO matche (equipe1, equipe2, map, scoreEquipe1, scoreEquipe2)
             VALUES
                     ('$equipe1', '$equipe2', '$map',$scoreEq1, $scoreEq2);
@@ -56,7 +53,15 @@ if($scoreEq2==$scoreEq1)
 ");
 }
 
- ?>
+$backgroundListe = $BDD->queryGetData("
+    SELECT backgroundUrl
+    FROM background;
+");
+
+$backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
+
+?>
+
  <!doctype html>
  <html lang="fr">
    <head>
@@ -76,6 +81,13 @@ if($scoreEq2==$scoreEq1)
 
      <!-- CSS Perso -->
      <link rel="stylesheet" href="../css/master.css">
+     <style>
+         html, body
+         {
+             background: url(<?=$backgroundURL?>) no-repeat center fixed;
+             background-size: cover;
+         }
+     </style>
    </head>
 
    <body class="text-center">

@@ -1,4 +1,13 @@
 <?php
+require_once 'SQL.php';
+$BDD = new SQL("prismesport");
+
+$backgroundListe = $BDD->queryGetData("
+    SELECT backgroundUrl
+    FROM background;
+");
+
+$backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
 
 ?>
 
@@ -22,6 +31,14 @@
 
     <!-- CSS Perso -->
     <link rel="stylesheet" href="../css/master.css">
+    <style>
+        html, body
+        {
+            background: url(<?=$backgroundURL?>) no-repeat center fixed;
+            background-size: cover;
+        }
+    </style>
+
   </head>
 
   <body class="text-center">

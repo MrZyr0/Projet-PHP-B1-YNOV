@@ -1,9 +1,15 @@
 <?php
     $RacineServ = __DIR__;
     require_once $RacineServ . '/src/php/SQL.php';
-    $SQL = new SQL("");
-?>
+    $BDD = new SQL("prismesport");
 
+    $backgroundListe = $BDD->queryGetData("
+        SELECT backgroundUrl
+        FROM background;
+    ");
+
+    $backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
+?>
 
 <!doctype html>
 <html lang="fr">
@@ -24,6 +30,13 @@
 
     <!-- CSS Perso -->
     <link rel="stylesheet" href="src/css/master.css">
+    <style>
+        html, body
+        {
+            background: url(<?=$backgroundURL?>) no-repeat center fixed;
+            background-size: cover;
+        }
+    </style>
   </head>
 
   <body class="text-center">

@@ -7,6 +7,14 @@ $matchs = $BDD->queryGetData("
     SELECT equipe1, equipe2, scoreEquipe1, scoreEquipe2
     FROM matche
 ");
+
+$backgroundListe = $BDD->queryGetData("
+    SELECT backgroundUrl
+    FROM background;
+");
+
+$backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
+
 ?>
 
 <!doctype html>
@@ -28,6 +36,14 @@ $matchs = $BDD->queryGetData("
 
     <!-- CSS Perso -->
     <link rel="stylesheet" href="../css/master.css">
+    <style>
+        html, body
+        {
+            background: url(<?=$backgroundURL?>) no-repeat center fixed;
+            background-size: cover;
+        }
+    </style>
+
   </head>
 
   <body class="text-center">
