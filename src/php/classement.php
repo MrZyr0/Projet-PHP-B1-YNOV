@@ -46,13 +46,13 @@ $equipes=$BDD->queryGetData("
               <br>
               <?php
                 foreach ($equipes as  $equipe) {
-                  print $equipe['nomEquipe'];
+                  print $equipe['nomEquipe']." ".$equipe['victoires']." ".$equipe['nuls']." ".$equipe['goalAverage'];
                   echo '<br>';
               }
                ?>
           </div>
-          <div class="victoires">
-              Victoires :
+          <!-- <div class="victoires">
+
               <br>
               <?php
 
@@ -84,7 +84,7 @@ $equipes=$BDD->queryGetData("
               }
                ?>
           </div>
-
+-->
           </div>
           <a href="../../index.php" class="btn btn-lg btn-secondary">Retour</a>
 

@@ -2,3 +2,13 @@
 {
     margin-left: 100px;
 }
+.classement
+{
+    display: flex;
+    flex-direction: row;
+}
+.nomEquipe
+{
+    display: flex;
+    flex-direction: row;
+}
