@@ -1,56 +1,31 @@
 <?php
-    $RacineServ = __DIR__;
-    require_once $RacineServ . '/src/php/func/selectBackground.php';
-    // var_dump($backgroundURL);
+    session_start();
+    $_SESSION["RacineServ"] = __DIR__;                                              // Variable session pour avoir des liens qui débutent par la racine du serveur dans tout les fichiers
+    require_once $_SESSION["RacineServ"] . '/src/php/func/selectBackground.php';
 ?>
 
 <!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Projet de PHP">
-    <meta name="author" content="Julien SEIXAS & Romaine LOIRE">
-    <link rel="icon" href="src/images/favicon.ico">
+<html lang="fr" class="html">
 
-    <title>Classement Overwatch</title>
+<?php include $_SESSION["RacineServ"] . '/src/php/templates/head.php'; ?>
 
-    <!-- Bootstrap core CSS -->
-    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <body class="page">
 
-    <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+        <header class="header">
+            <h3>Menu</h3>
+        </header>
 
-    <!-- CSS Perso -->
-    <link rel="stylesheet" href="src/css/master.css">
-    <style>
-        body
-        {
-            background: url(<?=$backgroundURL?>) no-repeat center fixed;
-            background-size: cover;
-        }
-    </style>
-  </head>
-
-  <body class="text-center">
-
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-          <h3>Menu</h3>
-      </header>
-
-      <main role="main" class="inner cover menu">
-          <a href="src/php/createDB.php?mode=0" class="btn btn-lg btn-secondary">Gestion de la BDD</a>
-          <a href="src/php/gestionMatch.php" class="btn btn-lg btn-secondary btn-accueil">Gestion des Matches</a>
-          <a href="src/php/classement.php" class="btn btn-lg btn-secondary btn-accueil">Classement</a>
-      </main>
-
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>&copy; Julien SEIXAS & Romain LOIRE - <?php print date("Y"); ?></p>
+        <div class="body">
+            <nav class="menu">
+                <a href="src/php/createDB.php?mode=0" class="btn">Gestion de la BDD</a>
+                <a href="src/php/gestionMatch.php" class="btn">Gestion des Matchs</a>
+                <a href="src/php/classement.php" class="btn">Classement</a>
+            </nav>
         </div>
-      </footer>
-    </div>
 
-  </body>
+        <footer class="footer">
+                <p>&copy; Julien SEIXAS & Romain LOIRE - <?php print date("Y"); ?></p>
+        </footer>
+
+    </body>
 </html>

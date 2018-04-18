@@ -1,23 +1,23 @@
 <?php
-require_once 'SQL.php';
+    require_once 'func/SQL.php';
 
-$BDD = new SQL("prismesport");
+    $BDD = new SQL();
+
+    $equipes=$BDD->queryGetData("
+        SELECT nomEquipe, victoires, nuls ,goalAverage
+        FROM equipe
+        ORDER BY victoires DESC, nuls DESC,goalAverage DESC;
+    ");
+
+    $backgroundListe = $BDD->queryGetData("
+        SELECT backgroundUrl
+        FROM background;
+    ");
+
+    $backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
+?>
 
 
-$equipes=$BDD->queryGetData("
-    SELECT nomEquipe, victoires, nuls ,goalAverage
-    FROM equipe
-    ORDER BY victoires DESC, nuls DESC,goalAverage DESC;
-");
-
-$backgroundListe = $BDD->queryGetData("
-    SELECT backgroundUrl
-    FROM background;
-");
-
-$backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
-
- ?>
 <!doctype html>
 <html lang="fr">
   <head>
