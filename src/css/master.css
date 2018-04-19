@@ -7,7 +7,7 @@
 .html
 {
     height: 100%;
-    background-color: rgba(122, 122, 122, 0.5);
+    background-color: #333;
 }
 
 .page
@@ -84,6 +84,38 @@
 {
     background-color: #0B0B0B;
     color: #D2D1D1;
+}
+
+.alert-warn
+{
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+
+.form
+{
+    display: flex;
+    flex-flow: column nowrap;
+    /* align-items: center; */
+}
+
+.form *
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form label
+{
+    color: white;
 }
 
 .footer

@@ -4,11 +4,11 @@ class SQL
 {
     private $PDO = null;
 
-    function __construct(string $DB = "prismesport")
+    function __construct(string $DB, string $user, string $pass)
     {
         $dsn = 'mysql:dbname=' . $DB . ';host=localhost';
-        $user = 'root';
-        $password = '';
+        $user = $user;
+        $password = $pass;
 
         $this->PDO = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
     }

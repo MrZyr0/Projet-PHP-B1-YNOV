@@ -1,9 +1,9 @@
 <?php
-$queryOK = false;
-if (isset($_GET["DB"]) && $_GET["DB"] == "initDB")
-{
-    include 'func/setDB.php';
-}
+    $queryOK = false;
+    if (isset($_GET["DB"]) && $_GET["DB"] == "initDB")
+    {
+        require_once 'func/setDB.php';
+    }
 ?>
 
 

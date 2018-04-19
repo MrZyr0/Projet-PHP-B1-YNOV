@@ -1,12 +1,12 @@
 <?php
 require_once 'SQL.php';
 
-$BDD = new SQL("");
+$BDD = new SQL("", $_SESSION["user"], $_SESSION["pass"]);
 
-$BDD->queryCreateData("DROP DATABASE IF EXISTS prismesport;");
+$BDD->queryCreateData("DROP DATABASE IF EXISTS " . $_SESSION["BDD"] . ";");
 $BDD->queryCreateData("
-                        CREATE DATABASE IF NOT EXISTS prismesport;
-                        USE prismesport;
+                        CREATE DATABASE IF NOT EXISTS " . $_SESSION["BDD"] . ";" . "
+                        USE " . $_SESSION["BDD"] . ";" . "
 
                         DROP TABLE IF EXISTS equipe;
                         CREATE TABLE equipe
@@ -82,19 +82,19 @@ $BDD->queryCreateData("
 
                         INSERT INTO background (backgroundName, backgroundUrl)
                         VALUES
-                            ('Dorado','https://www.gamecrate.com/sites/default/files/overwatch_Dorado_015.jpg'),
-                            ('Eichenvald','https://i.pinimg.com/originals/8d/b6/66/8db6661ca38339ecd268a23a65a4a816.jpg'),
-                            ('Gibraltar','https://cdnb.artstation.com/p/assets/images/images/007/539/319/large/andrew-klimas-watchpoint-gibraltar-02.jpg'),
-                            ('Hanamura','https://i.pinimg.com/originals/d9/de/e9/d9dee9e555f5e1b36f633b5ee2995781.jpg'),
-                            ('Hollywood','https://www.owfire.com/images/maps/hollywood-1.jpg'),
-                            ('Ilios','https://cdna.artstation.com/p/assets/images/images/004/302/224/large/thiago-klafke-thiagoklafke-overwatch-ilios-01.jpg'),
-                            ('King\'s Row','https://www.vladtime.ru/uploads/posts/2017-02/1487152134_kings-row.jpg'),
-                            ('Nepal','https://i.pinimg.com/originals/4b/1c/f3/4b1cf3c8618bc644ba42fb2e4730e989.jpg'),
-                            ('Numbani','https://www.owfire.com/images/maps/numbani-1.jpg'),
-                            ('Route 66','https://steemit-production-imageproxy-upload.s3.amazonaws.com/DQmTuWUuoN7NQCiEoenkNvECzfe6QjtWAFp5GypzHnSCHnB'),
-                            ('Temple d\'Anubis','https://i.pinimg.com/originals/03/28/0b/03280b22f5f978102529adc6742210d7.jpg'),
-                            ('Tour de Lijiang','https://i.pinimg.com/originals/a9/cb/a4/a9cba409fa00cec80632285e7bc650bb.jpg'),
-                            ('Usine Volskaya','https://gamewave.fr/static/images/medias/upload/Overwatch/volskaya-screenshot-003.3fvpT.jpg');
+                            ('Dorado','Dorado.jpg'),
+                            ('Eichenvald','Eichenvald.jpg'),
+                            ('Gibraltar','Gibraltar.jpg'),
+                            ('Hanamura','Hanamura.jpg'),
+                            ('Hollywood','Hollywood.jpg'),
+                            ('Ilios','Ilios.jpg'),
+                            ('King\'s Row','KingsRow.jpg'),
+                            ('Nepal','Nepal.jpg'),
+                            ('Numbani','Numbani.jpg'),
+                            ('Route 66','Route66.jpg'),
+                            ('Temple d\'Anubis','TempleAnubis.jpg'),
+                            ('Tour de Lijiang','Tour_de_Lijiang.jpg'),
+                            ('Usine Volskaya','Usine_Volskaya.jpg');
                     ");
 $queryOK = true;
 

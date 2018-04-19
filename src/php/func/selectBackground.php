@@ -1,19 +1,11 @@
 <?php
-    require_once 'SQL.php';
-    $BDD = new SQL();
+    require_once 'SQL.php';     // Appel la classe SQL (lien relatif car SQL est dans le même dossier courant)
+    $BDD = new SQL($_SESSION["BDD"], $_SESSION["user"], $_SESSION["pass"]);
 
-    try
-    {
     $backgroundListe = $BDD->queryGetData ("
         SELECT backgroundUrl
         FROM background;
     ");
 
-    $backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
-    }
-    catch (\Exception $e)
-    {
-        header('Location: ./src/php/createDB.php?DB=false');
-    }
-
+    $backgroundURL = '/Projet-PHP/src/images/backgrounds/' . $backgroundListe[array_rand($backgroundListe)][0];
 ?>

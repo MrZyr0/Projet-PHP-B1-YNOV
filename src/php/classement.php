@@ -17,6 +17,16 @@
     $backgroundURL = $backgroundListe[array_rand($backgroundListe)][0];
 ?>
 
+<?php
+
+    // Code d'affichage des maths pour l'historique
+
+    // foreach ($matchs as  $match)
+    // {
+    //     print $match['equipe1']." ".$match['scoreEquipe1']." ".$match["scoreEquipe2"]." ".$match["equipe2"];
+    //     echo '<br>';
+    // }
+?>
 
 <!doctype html>
 <html lang="fr">
