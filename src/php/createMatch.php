@@ -15,7 +15,7 @@
         </header>
 
         <div class="body">
-            <form class="form-inline" action="createMatchSql.php" method="POST">
+            <form class="form" action="createMatchSql.php" method="POST">
                 <div class="field-header">
                 Equipe 1 :
                 </div>
