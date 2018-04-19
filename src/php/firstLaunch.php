@@ -10,11 +10,11 @@
         $_SESSION["user"] = $_POST['user'];
         $_SESSION["pass"] = $_POST['pass'];
 
-        if ($_POST['signUp'])
+        if (isset($_POST['signUp']))
         {
             require_once $_SESSION["RacineServ"] . '/src/php/func/setDB.php';
         }
-        elseif ($_POST['signIn'])                                               // TODO: script pour vérifier la BDD
+        elseif (isset($_POST['signIn']))                                               // TODO: script pour vérifier la BDD
         {
             require_once $_SESSION["RacineServ"] . '/src/php/func/setDB.php';
         }
