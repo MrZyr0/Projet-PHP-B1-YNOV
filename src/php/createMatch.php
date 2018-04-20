@@ -81,8 +81,8 @@
                 }
             ?>
             <form class="form" action="?createMatch" method="POST">
-                <div>
-                    <label>Equipe 1</label>
+                <div class="form-blocks">
+                    <label class="form-label">Equipe 1</label>
                     <select class="input" name="equipe1">
                         <option value="Boston Uprising">Boston Uprising</option>
                         <option value="Dallas Fuel">Dallas Fuel</option>
@@ -98,7 +98,7 @@
                         <option value="Shanghai Dragons">Shanghai Dragons</option>
                     </select>
 
-                    <label>Equipe 2</label>
+                    <label class="form-label">Equipe 2</label>
                     <select class="input" name="equipe2">
                         <option value="Boston Uprising">Boston Uprising</option>
                         <option value="Dallas Fuel">Dallas Fuel</option>
@@ -116,8 +116,8 @@
 
                 </div>
 
-                <div>
-                    <label>Score Equipe 1</label>
+                <div class="form-blocks">
+                    <label class="form-label">Score Equipe 1</label>
                     <select class="input" name="scoreEquipe1">
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -125,7 +125,7 @@
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
-                    <label>Score Equipe 2</label>
+                    <label class="form-label">Score Equipe 2</label>
                     <select class="input" name="scoreEquipe2">
                         <option value="0">0</option>
                         <option value="1">1</option>
@@ -135,12 +135,8 @@
                     </select>
                 </div>
 
-
-
-
-
-                <div>
-                    <label>Map</label>
+                <div class="form-blocks">
+                    <label class="form-label">Map</label>
                     <select class="input" name="map">
                         <option value="Gibraltar">Gibraltar</option>
                         <option value="Dorado">Dorado</option>
@@ -161,8 +157,8 @@
             </form>
 
             <nav class="menu">
-            <a href="/Projet-PHP/src/php/matchManager.php" class="btn">Retour</a>
-            <a href="/Projet-PHP/index.php" class="btn">Accueil</a>
+                <a href="/Projet-PHP/src/php/matchManager.php" class="btn">Retour</a>
+                <a href="/Projet-PHP/index.php" class="btn">Accueil</a>
             </nav>
         </div>
 
