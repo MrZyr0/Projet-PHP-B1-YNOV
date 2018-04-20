@@ -17,15 +17,13 @@
 
         <div class="body">
             <nav class="menu">
-                <a href="/Projet-PHP/src/php/createMatch.php" class="btn">Créer un matche</a>
+                <a href="/Projet-PHP/src/php/createMatch.php" class="btn">Créer un match</a>
                 <a href="/Projet-PHP/src/php/createTeam.php" class="btn">Créer une équipe</a>
                 <a href="/Projet-PHP/index.php" class="btn">Retour</a>
             </nav>
         </div>
 
-        <footer class="footer">
-            <p>&copy; Julien SEIXAS & Romain LOIRE - <?php print date("Y"); ?></p>
-        </footer>
+<?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
 
     </body>
 </html>

@@ -38,37 +38,37 @@
         </header>
 
         <div class="body">
-            <div class="alert-warn">
                 <?php
-                    if ($_GET['firstLaunch'])
+                    if (isset($_GET['firstLaunch']))
                     {
+                        echo "<div class=\"alert alert-warn\">";
                         echo "Le système à détecté que vous lancer le site pour la première fois. Merci d'entrer vos accès à la BDD.";
+                        echo "</div>";
                     }
                 ?>
 
                 <?php
-                    if ($_GET['errorDB'])
+                    if (isset($_GET['errorDB']))
                     {
+                        echo "<div class=\"alert alert-warn\">";
                         echo "Le système à détecté une erreur avec la base de donnée. Il se peut que ce soit la première fois que vous lanciez le site (dans ce cas c'est normal). Merci d'entrer vos accès à la BDD.";
+                        echo "</div>";
                     }
                 ?>
 
                 <!-- <br>Si vous souhaitez récupérer les données d'une session précédente, entrez les mêmes informations et sélectionnez connxeion -->
-            </div>
             <nav class="menu">
                 <form class="form" action="?init" method="post">
-                    <span> <label>Nom de la BDD</label> <input type="text" name="BDD" value="" required> </span>
-                    <span> <label>Nom d'utilisateur</label> <input type="text" name="user" value="" required> </span>
-                    <span> <label>Mot de passe</label> <input type="password" name="pass" value=""> </span>
+                    <span> <label>Nom de la BDD</label> <input class="input input-txt" type="text" name="BDD" value="" required> </span>
+                    <span> <label>Nom d'utilisateur</label> <input class="input input-txt" type="text" name="user" value="" required> </span>
+                    <span> <label>Mot de passe</label> <input class="input input-txt" type="password" name="pass" value=""> </span>
                     <!-- <span> <label>Inscription</label> <input type="radio" name="signUp" value="" checked> <label>Connexion</label> <input type="radio" name="signIn" value=""></span> -->
                     <input type="submit" value="Submit">
                 </form>
             </nav>
         </div>
 
-        <footer class="footer">
-            <p>&copy; Julien SEIXAS & Romain LOIRE - <?php print date("Y"); ?></p>
-        </footer>
+<?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
 
     </body>
 </html>

@@ -29,9 +29,7 @@
             </nav>
         </div>
 
-        <footer class="footer">
-                <p>&copy; Julien SEIXAS & Romain LOIRE - <?php print date("Y"); ?></p>
-        </footer>
+<?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
 
     </body>
 </html>
