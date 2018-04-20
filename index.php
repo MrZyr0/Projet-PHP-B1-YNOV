@@ -3,9 +3,9 @@
 
     $_SESSION["RacineServ"] = __DIR__;                                              // Variable session pour avoir des liens qui débutent par la racine du serveur dans tout les fichiers
 
-    if (isset($_SESSION["initOK"]) != true)
+    if (isset($_SESSION["initOK"]) == false || isset($_SESSION["user"]) == false)
     {
-        header("Location: /Projet-PHP/src/php/firstLaunch.php");
+        header("Location: /Projet-PHP/src/php/firstLaunch.php?firstLaunch");
     }
 
     require_once $_SESSION["RacineServ"] . '/src/php/func/selectBackground.php';

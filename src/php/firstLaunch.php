@@ -39,7 +39,20 @@
 
         <div class="body">
             <div class="alert-warn">
-                Le système à détecté que vous lancer le site pour la première fois. Merci d'entrer vos accès à la BDD.
+                <?php
+                    if ($_GET['firstLaunch'])
+                    {
+                        echo "Le système à détecté que vous lancer le site pour la première fois. Merci d'entrer vos accès à la BDD.";
+                    }
+                ?>
+
+                <?php
+                    if ($_GET['errorDB'])
+                    {
+                        echo "Le système à détecté une erreur avec la base de donnée. Il se peut que ce soit la première fois que vous lanciez le site (dans ce cas c'est normal). Merci d'entrer vos accès à la BDD.";
+                    }
+                ?>
+
                 <!-- <br>Si vous souhaitez récupérer les données d'une session précédente, entrez les mêmes informations et sélectionnez connxeion -->
             </div>
             <nav class="menu">
