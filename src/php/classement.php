@@ -1,7 +1,8 @@
 <?php
+    session_start();
     require_once 'func/SQL.php';
 
-    $BDD = new SQL();
+    $BDD = new SQL($_SESSION["BDD"], $_SESSION["user"], $_SESSION["pass"]);
 
     $equipes=$BDD->queryGetData("
         SELECT nomEquipe, victoires, nuls ,goalAverage
