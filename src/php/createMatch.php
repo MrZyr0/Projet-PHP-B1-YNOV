@@ -161,8 +161,8 @@
             </form>
 
             <nav class="menu">
-            <a href="/Projet-PHP/src/php/matchManager.php" class="btn">Gestion des Matchs</a>
-            <a href="/Projet-PHP/src/php/classement.php" class="btn">Classement</a>
+            <a href="/Projet-PHP/src/php/matchManager.php" class="btn">Retour</a>
+            <a href="/Projet-PHP/index.php" class="btn">Accueil</a>
             </nav>
         </div>
 

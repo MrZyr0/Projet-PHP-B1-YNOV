@@ -91,8 +91,8 @@
 .alert-warn
 {
     color: #8a6d3b;
-    background-color: #fcf8e3;
-    border-color: #faebcc;
+    background-color: #FAF3CC;
+    border-color: #FAF0B6;
 }
 
 .alert-success
@@ -106,13 +106,7 @@
 {
     display: flex;
     flex-flow: column nowrap;
-    /* align-items: center; */
-}
-
-.form *
-{
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
 }
 
 .form label
