@@ -79,7 +79,7 @@
         </header>
 
         <div class="body">
-            
+
             <?php
                 if ($queryOK == true)
                 {
@@ -95,7 +95,7 @@
 
                         <?php
                         foreach ($teams as $team) {
-                            print '<option value='.$team['nomEquipe'].'>'.$team['nomEquipe'].'</option>';
+                            print '<option value="'.$team['nomEquipe'].'">'.$team['nomEquipe'].'</option>';
                         }
                          ?>
                     </select>
@@ -104,7 +104,7 @@
                     <select class="input" name="equipe2">
                         <?php
                         foreach ($teams as $team) {
-                            print '<option value='.$team['nomEquipe'].'>'.$team['nomEquipe'].'</option>';
+                            print '<option value="'.$team['nomEquipe'].'">'.$team['nomEquipe'].'</option>';
                         }
                          ?>
                     </select>
@@ -136,7 +136,7 @@
 
                     <?php
                             foreach ($maps as $map) {
-                            print '<option value='.$map['mapName'].'>'.$map['mapName'].'</option>';
+                            print '<option value="'.$map['mapName'].'">'.$map['mapName'].'</option>';
                             }
                      ?>
                     </select>
