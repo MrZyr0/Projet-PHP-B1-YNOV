@@ -49,31 +49,21 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                      <th class="table-case">Exemple Equipe</th>
-                      <td class="table-case">1</td>
-                      <td class="table-case">3</td>
-                      <td class="table-case">2</td>
-                  </tr>
-                  <tr>
-                      <th class="table-case">Exemple Equipe</th>
-                      <td class="table-case">1</td>
-                      <td class="table-case">3</td>
-                      <td class="table-case">2</td>
-                  </tr>
+                  <?php
+                    foreach ($teams as  $team) {
+                print ' <tr>
+                      <th class="table-case">'.$team["teamName"].'</th>
+                      <td class="table-case">'.$team["victory"].'</td>
+                      <td class="table-case">'.$team["draw"].'</td>
+                      <td class="table-case">'.$team["goalAverage"].'</td>
+                  </tr>';
+              }
+                   ?>
+
               </tbody>
           </table>
 
-          <div class="nomEquipe">
-              Nom equipe :
-              <br>
-              <?php
-                foreach ($teams as  $team) {
-                  print $team['teamName']." ".$team['victory']." ".$team['draw']." ".$team['goalAverage'];
-                  echo '<br>';
-              }
-               ?>
-          </div>
+
           <a href="../../index.php" class="btn btn-lg btn-secondary">Retour</a>
 
           <nav class="menu">

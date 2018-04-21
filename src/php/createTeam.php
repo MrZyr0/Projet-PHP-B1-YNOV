@@ -5,13 +5,22 @@
     $queryOK = false;
     if (isset($_GET['createTeam']))
     {
+        $size0=false;
         $teamName = $_POST['teamName'];
+        if(strlen($teamName)==0)
+        {
+            $size0=true;
+        }
+        if($size0==false)
+        {
         $BDD->queryCreateData("
             INSERT INTO team (teamName, victory, defeat, draw, goalAverage, image)
             VALUES ('$teamName', '0', '0','0', '0',' ');
             ");
-        $queryOK = true;
     }
+    $queryOK = true;
+
+}
 ?>
 
 <!doctype html>
@@ -27,10 +36,16 @@
 
         <div class="body">
             <?php
-                if ($queryOK == true)
+                if ($queryOK == true && $size0==false)
                 {
                     echo "<div class=\"alert alert-success\">";
                     echo "<p>L'equipe  <strong> $teamName </strong>  a bien été crée.</p>";
+                    echo "</div>";
+                }
+                if ($queryOK == true && $size0==true)
+                {
+                    echo "<div class=\"alert alert-success\">";
+                    echo "<p>Le nom de l'equipe doit faire au moins 1 caractère</p>";
                     echo "</div>";
                 }
             ?>
