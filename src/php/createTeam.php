@@ -8,9 +8,8 @@
         $teamName = $_POST['teamName'];
         $BDD->queryCreateData("
             INSERT INTO team (teamName, victory, defeat, draw, goalAverage, image)
-            VALUES
-                    ('$teamName', '0', '0','0', '0',' ');
-");
+            VALUES ('$teamName', '0', '0','0', '0',' ');
+            ");
         $queryOK = true;
     }
 ?>
@@ -35,18 +34,20 @@
                     echo "</div>";
                 }
             ?>
-            <form class="form" action="?createTeam" method="POST">
 
-                    <label>Nom equipe</label>
-                     <input type="text" name="teamName" />
-                <button type="submit" class="btn btn-primary my-1">Submit</button>
+            <form class="form" action="?createTeam" method="POST">
+                <div class="form-div1 form-div2">
+                    <label class="form-label">Nom equipe</label>
+                    <input type="text" name="teamName" class="input"/>
+                </div>
+                <button type="submit" class="btn btn-submit">Submit</button>
             </form>
 
             <nav class="menu">
-            <a href="/Projet-PHP/src/php/matchManager.php" class="btn">Gestion des Matchs</a>
-            <a href="/Projet-PHP/src/php/classement.php" class="btn">Classement</a>
+                <a href="/Projet-PHP/src/php/matchManager.php" class="btn">Retour</a>
+                <a href="/Projet-PHP/index.php" class="btn">Accueil</a>
             </nav>
-
+        </div>
 
 <?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
 
