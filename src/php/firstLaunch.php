@@ -63,7 +63,7 @@
                     <span> <label>Nom d'utilisateur</label> <input class="input input-txt" type="text" name="user" value="" required> </span>
                     <span> <label>Mot de passe</label> <input class="input input-txt" type="password" name="pass" value=""> </span>
                     <!-- <span> <label>Inscription</label> <input type="radio" name="signUp" value="" checked> <label>Connexion</label> <input type="radio" name="signIn" value=""></span> -->
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" class="btn btn-submit">
                 </form>
             </nav>
         </div>

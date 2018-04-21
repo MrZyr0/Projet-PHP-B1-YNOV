@@ -69,6 +69,11 @@
     border: 1px solid #fff;
 }
 
+.btn-submit
+{
+
+}
+
 .btn:hover
 {
     background-color: #DBDBDB;
@@ -116,6 +121,8 @@
 
 .form-blocks
 {
+    display: flex;
+    flex-flow: column wrap;
     margin-bottom: 0.5em;
 }
 
