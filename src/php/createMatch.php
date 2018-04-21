@@ -12,13 +12,17 @@
     $queryOK = false;
     if (isset($_GET['createMatch']))
     {
+        $sameTeam=false;
         $equipe1 = $_POST['equipe1'];
         $equipe2 = $_POST['equipe2'];
         $map = $_POST['map'];
         $scoreEq1 = $_POST['scoreEquipe1'];
         $scoreEq2 = $_POST['scoreEquipe2'];
-
-        if($scoreEq1>$scoreEq2)
+        if($equipe1===$equipe2)
+        {
+            $sameTeam=true;
+        }
+        if($scoreEq1>$scoreEq2 && $sameTeam==false)
         {
             $BDD->queryCreateData("
                 INSERT INTO matche (equipe1, equipe2, map, scoreEquipe1, scoreEquipe2)
@@ -34,7 +38,7 @@
                 WHERE nomEquipe = '$equipe2';
                 ");
         }
-        if($scoreEq2>$scoreEq1)
+        if($scoreEq2>$scoreEq1 && $sameTeam==false)
         {
             $BDD->queryCreateData("
                 INSERT INTO matche (equipe1, equipe2, map, scoreEquipe1, scoreEquipe2)
@@ -50,7 +54,7 @@
                 WHERE nomEquipe = '$equipe1';
                 ");
         }
-        if($scoreEq2==$scoreEq1)
+        if($scoreEq2==$scoreEq1 && $sameTeam==false)
         {
             $BDD->queryCreateData("
                 INSERT INTO matche (equipe1, equipe2, map, scoreEquipe1, scoreEquipe2)
@@ -81,10 +85,16 @@
         <div class="body">
 
             <?php
-                if ($queryOK == true)
+                if ($queryOK == true && $sameTeam==false)
                 {
                     echo "<div class=\"alert alert-success\">";
                     echo "<p>Le match entre <strong> $equipe1 </strong> et <strong> $equipe2 </strong> a bien été crée.</p>";
+                    echo "</div>";
+                }
+                if ($queryOK == true && $sameTeam==true)
+                {
+                    echo "<div class=\"alert alert-success\">";
+                    echo "<p>Impossible de créer un match entre la meme equipe.</p>";
                     echo "</div>";
                 }
             ?>
