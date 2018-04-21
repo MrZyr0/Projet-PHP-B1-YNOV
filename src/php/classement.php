@@ -4,10 +4,10 @@
 
     $BDD = new SQL($_SESSION["BDD"], $_SESSION["user"], $_SESSION["pass"]);
 
-    $equipes=$BDD->queryGetData("
-        SELECT nomEquipe, victoires, nuls ,goalAverage
-        FROM equipe
-        ORDER BY victoires DESC, nuls DESC,goalAverage DESC;
+    $teams=$BDD->queryGetData("
+        SELECT teamName, victory, draw ,goalAverage
+        FROM team
+        ORDER BY victory DESC, draw DESC,goalAverage DESC;
     ");
 
     $backgroundListe = $BDD->queryGetData("
@@ -73,46 +73,12 @@
               Nom equipe :
               <br>
               <?php
-                foreach ($equipes as  $equipe) {
-                  print $equipe['nomEquipe']." ".$equipe['victoires']." ".$equipe['nuls']." ".$equipe['goalAverage'];
+                foreach ($teams as  $team) {
+                  print $team['teamName']." ".$team['victory']." ".$team['draw']." ".$team['goalAverage'];
                   echo '<br>';
               }
                ?>
           </div>
-          <!-- <div class="victoires">
-
-              <br>
-              <?php
-
-                foreach ($equipes as  $equipe) {
-                  print $equipe['victoires'];
-                  echo '<br>';
-              }
-               ?>
-          </div>
-          <div class="nuls">
-              Nuls :
-              <br>
-              <?php
-
-                foreach ($equipes as  $equipe) {
-                  print $equipe['nuls'];
-                  echo '<br>';
-              }
-               ?>
-          </div>
-          <div class="goalAverage">
-              goalAverage
-              <br>
-              <?php
-
-                foreach ($equipes as  $equipe) {
-                  print $equipe['goalAverage'];
-                  echo '<br>';
-              }
-               ?>
-          </div>
--->
           </div>
           <a href="../../index.php" class="btn btn-lg btn-secondary">Retour</a>
 

@@ -7,7 +7,7 @@
     {
         $teamName = $_POST['teamName'];
         $BDD->queryCreateData("
-            INSERT INTO equipe (nomEquipe, victoires, defaites, nuls, goalAverage, image)
+            INSERT INTO team (teamName, victory, defeat, draw, goalAverage, image)
             VALUES
                     ('$teamName', '0', '0','0', '0',' ');
 ");
@@ -46,7 +46,7 @@
             <a href="/Projet-PHP/src/php/matchManager.php" class="btn">Gestion des Matchs</a>
             <a href="/Projet-PHP/src/php/classement.php" class="btn">Classement</a>
             </nav>
-    
+
 
 <?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
 

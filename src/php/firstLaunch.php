@@ -42,7 +42,7 @@
                     if (isset($_GET['firstLaunch']))
                     {
                         echo "<div class=\"alert alert-warn\">";
-                        echo "Le système à détecté que vous lancer le site pour la première fois. Merci d'entrer vos accès à la BDD.";
+                        echo "Le système à détecté que vous lancez le site pour la première fois. Merci d'entrer vos accès à la BDD.";
                         echo "</div>";
                     }
                 ?>

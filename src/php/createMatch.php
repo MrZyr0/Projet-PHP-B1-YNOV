@@ -2,8 +2,8 @@
     session_start();
     require_once $_SESSION["RacineServ"] . '/src/php/func/selectBackground.php';
     $teams=$BDD->queryGetData("
-    SELECT nomEquipe
-    FROM equipe
+    SELECT teamName
+    FROM team
     ");
     $maps=$BDD->queryGetData("
     SELECT mapName
@@ -13,57 +13,57 @@
     if (isset($_GET['createMatch']))
     {
         $sameTeam=false;
-        $equipe1 = $_POST['equipe1'];
-        $equipe2 = $_POST['equipe2'];
+        $team1 = $_POST['team1'];
+        $team2 = $_POST['team2'];
         $map = $_POST['map'];
-        $scoreEq1 = $_POST['scoreEquipe1'];
-        $scoreEq2 = $_POST['scoreEquipe2'];
-        if($equipe1===$equipe2)
+        $scoreTeam1 = $_POST['scoreTeam1'];
+        $scoreTeam2 = $_POST['scoreTeam2'];
+        if($team1===$team2)
         {
             $sameTeam=true;
         }
-        if($scoreEq1>$scoreEq2 && $sameTeam==false)
+        if($scoreTeam1>$scoreTeam2 && $sameTeam==false)
         {
             $BDD->queryCreateData("
-                INSERT INTO matche (equipe1, equipe2, map, scoreEquipe1, scoreEquipe2)
+                INSERT INTO game (team1, team2, map, scoreTeam1, scoreTeam2)
                 VALUES
-                ('$equipe1', '$equipe2', '$map',$scoreEq1, $scoreEq2);
+                ('$team1', '$team2', '$map',$scoreTeam1, $scoreTeam2);
 
-                UPDATE equipe
-                SET victoires = victoires + 1, goalAverage = goalAverage + ($scoreEq1 - $scoreEq2)
-                WHERE nomEquipe = '$equipe1';
+                UPDATE team
+                SET victory = victory + 1, goalAverage = goalAverage + ($scoreTeam1 - $scoreTeam2)
+                WHERE teamName = '$team1';
 
-                UPDATE equipe
-                SET defaites = defaites + 1, goalAverage = goalAverage - ($scoreEq1 - $scoreEq2)
-                WHERE nomEquipe = '$equipe2';
+                UPDATE team
+                SET defeat = defeat + 1, goalAverage = goalAverage - ($scoreTeam1 - $scoreTeam2)
+                WHERE teamName = '$team2';
                 ");
         }
-        if($scoreEq2>$scoreEq1 && $sameTeam==false)
+        if($scoreTeam2>$scoreTeam1 && $sameTeam==false)
         {
             $BDD->queryCreateData("
-                INSERT INTO matche (equipe1, equipe2, map, scoreEquipe1, scoreEquipe2)
+                INSERT INTO game (team1, team2, map, scoreTeam1, scoreTeam2)
                 VALUES
-                ('$equipe1', '$equipe2', '$map',$scoreEq1, $scoreEq2);
+                ('$team1', '$team2', '$map',$scoreTeam1, $scoreTeam2);
 
-                UPDATE equipe
-                SET victoires = victoires + 1, goalAverage = goalAverage + ($scoreEq2 - $scoreEq1)
-                WHERE nomEquipe = '$equipe2';
+                UPDATE team
+                SET victory = victory + 1, goalAverage = goalAverage + ($scoreTeam2 - $scoreTeam1)
+                WHERE teamName = '$team2';
 
-                UPDATE equipe
-                SET defaites = defaites + 1, goalAverage = goalAverage - ($scoreEq2 - $scoreEq1)
-                WHERE nomEquipe = '$equipe1';
+                UPDATE team
+                SET defeat = defeat + 1, goalAverage = goalAverage - ($scoreTeam2 - $scoreTeam1)
+                WHERE teamName = '$team1';
                 ");
         }
-        if($scoreEq2==$scoreEq1 && $sameTeam==false)
+        if($scoreTeam2==$scoreTeam1 && $sameTeam==false)
         {
             $BDD->queryCreateData("
-                INSERT INTO matche (equipe1, equipe2, map, scoreEquipe1, scoreEquipe2)
+                INSERT INTO game (team1, team2, map, scoreTeam1, scoreTeam2)
                 VALUES
-                ('$equipe1', '$equipe2', '$map',$scoreEq1, $scoreEq2);
+                ('$team1', '$team2', '$map',$scoreTeam1, $scoreTeam2);
 
-                UPDATE equipe
+                UPDATE team
                 SET nuls = nuls +1
-                WHERE nomEquipe = '$equipe2' OR nomEquipe = '$equipe1';
+                WHERE teamName = '$team2' OR teamName = '$team1';
                 ");
         }
 
@@ -88,7 +88,7 @@
                 if ($queryOK == true && $sameTeam==false)
                 {
                     echo "<div class=\"alert alert-success\">";
-                    echo "<p>Le match entre <strong> $equipe1 </strong> et <strong> $equipe2 </strong> a bien été crée.</p>";
+                    echo "<p>Le match entre <strong> $team1 </strong> et <strong> $team2 </strong> a bien été crée.</p>";
                     echo "</div>";
                 }
                 if ($queryOK == true && $sameTeam==true)
@@ -101,20 +101,20 @@
             <form class="form" action="?createMatch" method="POST">
                 <div class="form-blocks">
                     <label class="form-label">Equipe 1</label>
-                    <select class="input" name="equipe1">
+                    <select class="input" name="team1">
 
                         <?php
                         foreach ($teams as $team) {
-                            print '<option value="'.$team['nomEquipe'].'">'.$team['nomEquipe'].'</option>';
+                            print '<option value="'.$team['teamName'].'">'.$team['teamName'].'</option>';
                         }
                          ?>
                     </select>
 
                     <label class="form-label">Equipe 2</label>
-                    <select class="input" name="equipe2">
+                    <select class="input" name="team2">
                         <?php
                         foreach ($teams as $team) {
-                            print '<option value="'.$team['nomEquipe'].'">'.$team['nomEquipe'].'</option>';
+                            print '<option value="'.$team['teamName'].'">'.$team['teamName'].'</option>';
                         }
                          ?>
                     </select>
@@ -123,7 +123,7 @@
 
                 <div class="form-blocks">
                     <label class="form-label">Score Equipe 1</label>
-                    <select class="input" name="scoreEquipe1">
+                    <select class="input" name="scoreTeam1">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -131,7 +131,7 @@
                         <option value="4">4</option>
                     </select>
                     <label class="form-label">Score Equipe 2</label>
-                    <select class="input" name="scoreEquipe2">
+                    <select class="input" name="scoreTeam2">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
