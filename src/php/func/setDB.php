@@ -8,20 +8,20 @@ $BDD->queryCreateData("
                         CREATE DATABASE IF NOT EXISTS " . $_SESSION["BDD"] . ";" . "
                         USE " . $_SESSION["BDD"] . ";" . "
 
-                        DROP TABLE IF EXISTS equipe;
-                        CREATE TABLE equipe
+                        DROP TABLE IF EXISTS team;
+                        CREATE TABLE team
                         (
                           ID int(11) unsigned NOT NULL AUTO_INCREMENT,
-                          nomEquipe varchar(255) DEFAULT NULL,
-                          victoires int(11) DEFAULT 0,
-                          defaites int(11) DEFAULT 0,
-                          nuls int(11) DEFAULT 0,
+                          teamName varchar(255) DEFAULT NULL,
+                          victory int(11) DEFAULT 0,
+                          defeat int(11) DEFAULT 0,
+                          draw int(11) DEFAULT 0,
                           goalAverage int(11) DEFAULT 0,
                           image varchar(255) DEFAULT NULL,
                           PRIMARY KEY (ID)
                         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-                        INSERT INTO equipe (nomEquipe, image)
+                        INSERT INTO team (teamName, image)
                         VALUES
                             ('Boston Uprising','https://image.noelshack.com/fichiers/2018/16/1/1523909912-bostonuprising.png'),
                             ('Dallas Fuel','https://image.noelshack.com/fichiers/2018/16/1/1523909934-dallasfuel.png'),
@@ -59,15 +59,15 @@ $BDD->queryCreateData("
                             ('Nepal'),
                             ('Tour de Lijiang');
 
-                        DROP TABLE IF EXISTS matche;
-                        CREATE TABLE matche
+                        DROP TABLE IF EXISTS game;
+                        CREATE TABLE game
                         (
                           ID int(11) unsigned NOT NULL AUTO_INCREMENT,
-                          equipe1 varchar(255) DEFAULT NULL,
-                          equipe2 varchar(255) DEFAULT NULL,
+                          team1 varchar(255) DEFAULT NULL,
+                          team2 varchar(255) DEFAULT NULL,
                           map varchar(255) DEFAULT NULL,
-                          scoreEquipe1 int(11) DEFAULT 0,
-                          scoreEquipe2 int(11) DEFAULT 0,
+                          scoreTeam1 int(11) DEFAULT 0,
+                          scoreTeam2 int(11) DEFAULT 0,
                           PRIMARY KEY (ID)
                         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
