@@ -1,5 +1,11 @@
 <?php
     session_start();
+
+    if (isset($_SESSION["initOK"]) == false || isset($_SESSION["user"]) == false || isset($_SESSION["RacineServ"]) == false)
+    {
+        header("Location: /Projet-PHP/index.php");
+    }
+
     require_once $_SESSION["RacineServ"] . '/src/php/func/selectBackground.php';
 
     $teams = $BDD->queryGetData("

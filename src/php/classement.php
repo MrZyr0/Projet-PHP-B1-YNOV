@@ -1,5 +1,11 @@
 <?php
     session_start();
+
+    if (isset($_SESSION["initOK"]) == false || isset($_SESSION["user"]) == false || isset($_SESSION["RacineServ"]) == false)
+    {
+        header("Location: /Projet-PHP/index.php");
+    }
+
     require_once $_SESSION["RacineServ"] . '/src/php/func/selectBackground.php';
 
     $teams=$BDD->queryGetData("
@@ -42,10 +48,10 @@
           <table class="table">
               <thead class="table-head">
                   <tr>
-                      <th>Nom de l'équipe</th>
-                      <th>Nombre de victoires</th>
-                      <th>draw</th>
-                      <th>goalAverage</th>
+                      <th class="table-case table-case-cornerLeft">Nom de l'équipe</th>
+                      <th class="table-case">Nombre de victoires</th>
+                      <th class="table-case">draw</th>
+                      <th class="table-case table-case-cornerRight">goalAverage</th>
                   </tr>
               </thead>
               <tbody>
@@ -64,11 +70,8 @@
           </table>
 
 
-          <a href="../../index.php" class="btn btn-lg btn-secondary">Retour</a>
-
           <nav class="menu">
-              <a href="/Projet-PHP/src/php/matchManager.php" class="btn">Gestion des Matchs</a>
-              <a href="/Projet-PHP/src/php/classement.php" class="btn">Classement</a>
+              <a href="/Projet-PHP/index.php" class="btn">Retour</a>
           </nav>
       </div>
 

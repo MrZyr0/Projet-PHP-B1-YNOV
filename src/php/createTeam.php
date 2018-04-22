@@ -1,5 +1,11 @@
 <?php
     session_start();
+
+    if (isset($_SESSION["initOK"]) == false || isset($_SESSION["user"]) == false || isset($_SESSION["RacineServ"]) == false)
+    {
+        header("Location: /Projet-PHP/index.php");
+    }
+
     require_once $_SESSION["RacineServ"] . '/src/php/func/selectBackground.php';
 
     $queryOK = false;
@@ -39,12 +45,12 @@
                 if ($queryOK == true && $size0==false)
                 {
                     echo "<div class=\"alert alert-success\">";
-                    echo "<p>L'equipe  <strong> $teamName </strong>  a bien été crée.</p>";
+                    echo "<p>L'equipe  <strong> $teamName </strong>  à bien été crée.</p>";
                     echo "</div>";
                 }
                 if ($queryOK == true && $size0==true)
                 {
-                    echo "<div class=\"alert alert-success\">";
+                    echo "<div class=\"alert alert-warn\">";
                     echo "<p>Le nom de l'equipe doit faire au moins 1 caractère</p>";
                     echo "</div>";
                 }
