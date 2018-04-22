@@ -44,8 +44,8 @@
                   <tr>
                       <th>Nom de l'équipe</th>
                       <th>Nombre de victoires</th>
-                      <th>draw</th>
-                      <th>goalAverage</th>
+                      <th>Nuls</th>
+                      <th>GoalAverage</th>
                   </tr>
               </thead>
               <tbody>

@@ -44,7 +44,7 @@
                 }
                 if ($queryOK == true && $size0==true)
                 {
-                    echo "<div class=\"alert alert-success\">";
+                    echo "<div class=\"alert alert-warn\">";
                     echo "<p>Le nom de l'equipe doit faire au moins 1 caractère</p>";
                     echo "</div>";
                 }
