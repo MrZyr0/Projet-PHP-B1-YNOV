@@ -48,10 +48,17 @@
           <table class="table">
               <thead class="table-head">
                   <tr>
+<<<<<<< HEAD
                       <th class="table-case table-case-cornerLeft">Nom de l'équipe</th>
                       <th class="table-case">Nombre de victoires</th>
                       <th class="table-case">draw</th>
                       <th class="table-case table-case-cornerRight">goalAverage</th>
+=======
+                      <th>Nom de l'équipe</th>
+                      <th>Nombre de victoires</th>
+                      <th>Nuls</th>
+                      <th>GoalAverage</th>
+>>>>>>> cde848baf39557d212f7bcd8c3223bcd8efb894b
                   </tr>
               </thead>
               <tbody>
