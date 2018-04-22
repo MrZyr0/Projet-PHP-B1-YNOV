@@ -10,23 +10,47 @@ class SQL
         $user = $user;
         $password = $pass;
 
-        $this->PDO = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+        try
+        {
+            $this->PDO = new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+        }
+        catch (PDOException  $e)
+        {
+            header("Location: /Projet-PHP/src/php/firstLaunch.php?errorDB");
+        }
+
     }
 
     function queryGetData(string $sql)
     {
-        $Statement = $this->PDO->prepare($sql);
+        try
+        {
+            $Statement = $this->PDO->prepare($sql);
 
-        $Statement->execute();
+            $Statement->execute();
 
-        return $Statement->fetchAll();
+            return $Statement->fetchAll();
+        }
+        catch (PDOException  $e)
+        {
+            header("Location: /Projet-PHP/src/php/firstLaunch.php?errorDB");
+        }
+
     }
 
     function queryCreateData(string $sql)
     {
-        $Statement = $this->PDO->prepare($sql);
+        try
+        {
+            $Statement = $this->PDO->prepare($sql);
 
-        return $Statement->execute();
+            return $Statement->execute();
+        }
+        catch (PDOException  $e)
+        {
+            header("Location: /Projet-PHP/src/php/firstLaunch.php?errorDB");
+        }
+        
     }
 
 }

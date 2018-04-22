@@ -39,11 +39,14 @@
     flex-flow: column nowrap;
     overflow: auto;
     margin: auto;
+    justify-content: center;
+    align-items: center;
 
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 0.5em;
     padding: 1em;
-
+    max-width: 85%;
+    max-height: 75%;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
@@ -73,6 +76,7 @@
 
 .btn-submit
 {
+    font-size: 1.2em;
     color: #fff;
     background-color: #007bff;
 }
@@ -90,9 +94,11 @@
 
 .alert
 {
+    text-align: center;
     padding: 0.7em;
     margin-bottom: 1em;
     border-radius: 4px;
+    max-width: 70%;
 }
 
 .alert-warn
@@ -104,9 +110,16 @@
 
 .alert-success
 {
-    color: #3c763d;
-    background-color: #dff0d8;
-    border-color: #d6e9c6;
+    color: #3B8A3E;
+    background-color: #CCFAD2;
+    border-color: #B6FAC1;
+}
+
+.alert-error
+{
+    color: #8A3B3B;
+    background-color: #FACCCC;
+    border-color: #FAB6B6;
 }
 
 .form
@@ -114,6 +127,7 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    overflow: auto;
 }
 
 .form-label
@@ -157,17 +171,26 @@
 {
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 8em;
+    height: fit-content;
 }
 
 .table
 {
-    margin-bottom: 1.5em;
     border-collapse: collapse;
     color: #333;
     background-color: #fff;
-
+    overflow: auto;
+    width: 100%;
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     border-spacing: 0;
+}
+
+.table-container
+{
+    overflow: auto;
+    width: -webkit-fill-available;
+    margin-bottom: 1.5em;
 }
 
 .table-head
@@ -182,6 +205,11 @@
     padding: 0.3em;
     text-align: center;
     border-top: 1px solid #333;
+}
+
+.table-line:hover
+{
+    background-color: #DBDBDB;
 }
 
 .table-case-cornerLeft
@@ -207,5 +235,5 @@
     background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(255, 255, 255, 0.5));
 
     color: black;
-    font-size: 1.2em;
+    font-size: 3vh;
 }

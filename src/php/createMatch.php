@@ -109,80 +109,82 @@
                 }
             ?>
 
-            <form class="form" action="?createMatch" method="POST">
-                <div class="form-div1">
+            <div class="table-container">
+                <form class="form" action="?createMatch" method="POST">
+                    <div class="form-div1">
 
-                    <div class="form-div2">
-                        <label class="form-label">Equipe 1</label>
-                        <select class="input" name="team1">
-                            <?php
-                            foreach ($teams as $team)
-                            {
-                                print '<option value="'.$team['teamName'].'">'.$team['teamName'].'</option>';
-                            }
-                            ?>
-                        </select>
-                    </div>
-
-
-                    <div class="form-div2">
-                        <label class="form-label">Equipe 2</label>
-                        <select class="input" name="team2">
-                            <?php
-                            foreach ($teams as $team)
-                            {
-                                print '<option value="'.$team['teamName'].'">'.$team['teamName'].'</option>';
-                            }
-                            ?>
-                        </select>
-                    </div>
-
-                </div>
-
-                <div class="separator"></div>
-
-                <div class="form-div1">
-                    <div class="form-div2">
-                        <label class="form-label">Score Equipe 1</label>
-                        <select class="input" name="scoreTeam1">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-
-                    <div class="form-div2">
-                        <label class="form-label">Score Equipe 2</label>
-                        <select class="input" name="scoreTeam2">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="separator"></div>
-
-                <div class="form-div1">
-                    <div class="form-div2">
-                        <label class="form-label">Map</label>
-                        <select class="input" name="map">
-                            <?php
-                                foreach ($maps as $map)
+                        <div class="form-div2">
+                            <label class="form-label">Equipe 1</label>
+                            <select class="input" name="team1">
+                                <?php
+                                foreach ($teams as $team)
                                 {
-                                    print '<option value="'.$map['mapName'].'">'.$map['mapName'].'</option>';
+                                    print '<option value="'.$team['teamName'].'">'.$team['teamName'].'</option>';
                                 }
-                             ?>
-                        </select>
-                    </div>
-                </div>
+                                ?>
+                            </select>
+                        </div>
 
-                <button type="submit" class="btn btn-submit">Submit</button>
-            </form>
+
+                        <div class="form-div2">
+                            <label class="form-label">Equipe 2</label>
+                            <select class="input" name="team2">
+                                <?php
+                                foreach ($teams as $team)
+                                {
+                                    print '<option value="'.$team['teamName'].'">'.$team['teamName'].'</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <div class="form-div1">
+                        <div class="form-div2">
+                            <label class="form-label">Score Equipe 1</label>
+                            <select class="input" name="scoreTeam1">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+
+                        <div class="form-div2">
+                            <label class="form-label">Score Equipe 2</label>
+                            <select class="input" name="scoreTeam2">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <div class="form-div1">
+                        <div class="form-div2">
+                            <label class="form-label">Map</label>
+                            <select class="input" name="map">
+                                <?php
+                                    foreach ($maps as $map)
+                                    {
+                                        print '<option value="'.$map['mapName'].'">'.$map['mapName'].'</option>';
+                                    }
+                                 ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </form>
+            </div>
 
             <nav class="menu">
                 <a href="/Projet-PHP/src/php/matchManager.php" class="btn">Retour</a>

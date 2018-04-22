@@ -45,30 +45,31 @@
 
       <div class="body">
 
-          <table class="table">
-              <thead class="table-head">
-                  <tr>
-                      <th class="table-case table-case-cornerLeft">Nom de l'équipe</th>
-                      <th class="table-case">Nombre de victoires</th>
-                      <th class="table-case">draw</th>
-                      <th class="table-case table-case-cornerRight">goalAverage</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <?php
-                    foreach ($teams as  $team) {
-                print ' <tr>
-                      <th class="table-case">'.$team["teamName"].'</th>
-                      <td class="table-case">'.$team["victory"].'</td>
-                      <td class="table-case">'.$team["draw"].'</td>
-                      <td class="table-case">'.$team["goalAverage"].'</td>
-                  </tr>';
-              }
-                   ?>
-
-              </tbody>
-          </table>
-
+          <div class="table-container">
+              <table class="table">
+                  <thead class="table-head">
+                      <tr>
+                          <th class="table-case table-case-cornerLeft">Nom de l'équipe</th>
+                          <th class="table-case">Nombre de victoires</th>
+                          <th class="table-case">draw</th>
+                          <th class="table-case table-case-cornerRight">goalAverage</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <?php
+                          foreach ($teams as  $team)
+                          {
+                              print ' <tr class="table-line">
+                                  <th class="table-case">'.$team["teamName"].'</th>
+                                  <td class="table-case">'.$team["victory"].'</td>
+                                  <td class="table-case">'.$team["draw"].'</td>
+                                  <td class="table-case">'.$team["goalAverage"].'</td>
+                                  </tr>';
+                          }
+                      ?>
+                  </tbody>
+              </table>
+          </div>
 
           <nav class="menu">
               <a href="/Projet-PHP/index.php" class="btn">Retour</a>
