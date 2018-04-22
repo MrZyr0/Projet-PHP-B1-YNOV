@@ -25,11 +25,11 @@
         <div class="body">
             <nav class="menu">
                 <a href="/Projet-PHP/src/php/matchManager.php" class="btn">Gestion des Matchs</a>
-                <a href="/Projet-PHP/src/php/classement.php" class="btn">Classement</a>
+                <a href="/Projet-PHP/src/php/ranking.php" class="btn">Classement</a>
             </nav>
         </div>
 
-<?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
+    <?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
 
     </body>
 </html>

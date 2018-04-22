@@ -59,12 +59,12 @@
                       <?php
                           foreach ($teams as  $team)
                           {
-                              print ' <tr class="table-line">
-                                  <th class="table-case">'.$team["teamName"].'</th>
-                                  <td class="table-case">'.$team["victory"].'</td>
-                                  <td class="table-case">'.$team["draw"].'</td>
-                                  <td class="table-case">'.$team["goalAverage"].'</td>
-                                  </tr>';
+                          print '<tr class="table-line">
+                        <th class="table-case">'.$team["teamName"].'</th>
+                        <td class="table-case">'.$team["victory"].'</td>
+                        <td class="table-case">'.$team["draw"].'</td>
+                        <td class="table-case">'.$team["goalAverage"].'</td>
+                    </tr>'."\n";
                           }
                       ?>
                   </tbody>
@@ -76,7 +76,7 @@
           </nav>
       </div>
 
-<?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
+  <?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
 
   </body>
 </html>

@@ -1,10 +1,10 @@
 <?php
     session_start();
 
-    if (isset($_SESSION["initOK"]) == false || isset($_SESSION["user"]) == false || isset($_SESSION["RacineServ"]) == false)
-    {
-        header("Location: /Projet-PHP/index.php");
-    }
+    // if (isset($_SESSION["initOK"]) == false || isset($_SESSION["user"]) == false || isset($_SESSION["RacineServ"]) == false)
+    // {
+    //     header("Location: /Projet-PHP/index.php");
+    // }
 
     require_once $_SESSION["RacineServ"] . '/src/php/func/selectBackground.php';
 
@@ -18,7 +18,6 @@
         FROM map
         ");
 
-
     $queryOK = false;
     if (isset($_GET['createMatch']))
     {
@@ -28,10 +27,12 @@
         $map = $_POST['map'];
         $scoreTeam1 = $_POST['scoreTeam1'];
         $scoreTeam2 = $_POST['scoreTeam2'];
+
         if($team1===$team2)
         {
             $sameTeam=true;
         }
+
         if($scoreTeam1>$scoreTeam2 && $sameTeam==false)
         {
             $BDD->queryCreateData("
@@ -48,6 +49,7 @@
                 WHERE teamName = '$team2';
                 ");
         }
+
         if($scoreTeam2>$scoreTeam1 && $sameTeam==false)
         {
             $BDD->queryCreateData("
@@ -64,6 +66,7 @@
                 WHERE teamName = '$team1';
                 ");
         }
+
         if($scoreTeam2==$scoreTeam1 && $sameTeam==false)
         {
             $BDD->queryCreateData("
@@ -117,10 +120,11 @@
                             <label class="form-label">Equipe 1</label>
                             <select class="input" name="team1">
                                 <?php
-                                foreach ($teams as $team)
-                                {
-                                    print '<option value="'.$team['teamName'].'">'.$team['teamName'].'</option>';
-                                }
+                                    foreach ($teams as $team)
+                                    {
+                                        print '<option value="' . $team['teamName'].'">' . $team['teamName'] . '</option>' . "\n                                ";
+                                    }
+                                    print "\n";
                                 ?>
                             </select>
                         </div>
@@ -132,8 +136,9 @@
                                 <?php
                                 foreach ($teams as $team)
                                 {
-                                    print '<option value="'.$team['teamName'].'">'.$team['teamName'].'</option>';
+                                    print '<option value="'.$team['teamName'].'">'.$team['teamName'].'</option>' . "\n                                ";
                                 }
+                                print "\n";
                                 ?>
                             </select>
                         </div>
@@ -150,7 +155,7 @@
 
                         <div class="form-div2">
                             <label class="form-label">Score Equipe 2</label>
-                            <input type="number" class="input input-number" name="scoreTeam1" value="0">
+                            <input type="number" class="input input-number" name="scoreTeam2" value="0">
                         </div>
                     </div>
 
@@ -163,8 +168,9 @@
                                 <?php
                                     foreach ($maps as $map)
                                     {
-                                        print '<option value="'.$map['mapName'].'">'.$map['mapName'].'</option>';
+                                        print '<option value="'.$map['mapName'].'">'.$map['mapName'].'</option>' . "\n                                ";
                                     }
+                                    print "\n";
                                  ?>
                             </select>
                         </div>
@@ -180,7 +186,7 @@
             </nav>
         </div>
 
-<?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
+    <?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
 
     </body>
 </html>

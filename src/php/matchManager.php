@@ -6,15 +6,13 @@
         header("Location: /Projet-PHP/index.php");
     }
 
-
     require_once $_SESSION["RacineServ"] . '/src/php/func/selectBackground.php';
 ?>
-
 
 <!doctype html>
 <html lang="fr" class="html">
 
-    <?php require_once $_SESSION["RacineServ"] . '/src/php/templates/head.php'; ?>
+<?php require_once $_SESSION["RacineServ"] . '/src/php/templates/head.php'; ?>
 
     <body class="page">
 
@@ -30,7 +28,7 @@
             </nav>
         </div>
 
-<?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
+    <?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
 
     </body>
 </html>

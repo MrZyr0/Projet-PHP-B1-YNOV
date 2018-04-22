@@ -19,14 +19,13 @@
         }
         if($size0==false)
         {
-        $BDD->queryCreateData("
-            INSERT INTO team (teamName, victory, defeat, draw, goalAverage, image)
-            VALUES ('$teamName', '0', '0','0', '0',' ');
-            ");
+            $BDD->queryCreateData("
+                INSERT INTO team (teamName, victory, defeat, draw, goalAverage, image)
+                VALUES ('$teamName', '0', '0','0', '0',' ');
+                ");
+        }
+        $queryOK = true;
     }
-    $queryOK = true;
-
-}
 ?>
 
 <!doctype html>
@@ -70,7 +69,7 @@
             </nav>
         </div>
 
-<?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
+    <?php require_once $_SESSION["RacineServ"] . '/src/php/templates/footer.php'; ?>
 
     </body>
 </html>
