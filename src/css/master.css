@@ -173,6 +173,13 @@
     border-radius: 4px;
     width: 8em;
     height: fit-content;
+    width: fit-content;
+    text-align: center;
+}
+
+.input-number
+{
+    width: 40px;
 }
 
 .table

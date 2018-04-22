@@ -145,24 +145,12 @@
                     <div class="form-div1">
                         <div class="form-div2">
                             <label class="form-label">Score Equipe 1</label>
-                            <select class="input" name="scoreTeam1">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
+                            <input type="number" class="input input-number" name="scoreTeam1" value="0">
                         </div>
 
                         <div class="form-div2">
                             <label class="form-label">Score Equipe 2</label>
-                            <select class="input" name="scoreTeam2">
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                            </select>
+                            <input type="number" class="input input-number" name="scoreTeam1" value="0">
                         </div>
                     </div>
 

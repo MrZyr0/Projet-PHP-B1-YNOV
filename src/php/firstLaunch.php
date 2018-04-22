@@ -62,21 +62,28 @@
 
                 <!-- <br>Si vous souhaitez récupérer les données d'une session précédente, entrez les mêmes informations et sélectionnez connxeion -->
                 <form class="form" action="?init" method="post">
-                        <div class="form-div2">
-                             <label class="form-label">Nom de la BDD</label>
-                             <input class="input input-txt" type="text" name="BDD" value="" required>
-                         </div>
+                    <div class="form-div2">
+                        <label class="form-label">Nom de la BDD</label>
+                        <input class="input input-txt" type="text" name="BDD" value="" required>
+                    </div>
 
-                        <div class="form-div2">
-                            <label class="form-label">Nom d'utilisateur</label>
-                            <input class="input input-txt" type="text" name="user" value="" required>
-                        </div>
+                    <div class="form-div2">
+                        <label class="form-label">Nom d'utilisateur</label>
+                        <input class="input input-txt" type="text" name="user" value="" required>
+                    </div>
 
-                        <div class="form-div2">
-                            <label class="form-label">Mot de passe</label>
-                            <input class="input input-txt" type="password" name="pass" value="">
-                        </div>
-                    <!-- <span> <label>Inscription</label> <input type="radio" name="signUp" value="" checked> <label>Connexion</label> <input type="radio" name="signIn" value=""></span> -->
+                    <div class="form-div2">
+                        <label class="form-label">Mot de passe</label>
+                        <input class="input input-txt" type="password" name="pass" value="">
+                    </div>
+
+                    <!-- <div class="form-div2">
+                        <label class="form-label">Inscription</label>
+                        <input type="radio" name="signUp" value="" checked>
+                        <label class="form-label">Connexion</label>
+                        <input type="radio" name="signIn" value="">
+                    </div> -->
+
                     <input type="submit" value="Submit" class="btn btn-submit">
                 </form>
         </div>
