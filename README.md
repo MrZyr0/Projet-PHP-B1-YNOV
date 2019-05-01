@@ -3,13 +3,13 @@
 Le concept est le même que pour le [Projet Web](https://github.com/MrZyr0/Projet-Web/) en Javascript mais en utilisant du PHP et une connexion à une base de donnée MySQL.
 L'outil est ouvert à tous et permet de gérer facilement ses tournois d'overwatch sur tout supports !
 
->Page de configuration
+##### Page de configuration
 ![First Launch screen](https://raw.githubusercontent.com/MrZyr0/Projet-PHP/master/docs/firstConnexionScreenshot.png)
 
->Accueil
+##### Accueil
 ![Home](https://raw.githubusercontent.com/MrZyr0/Projet-PHP/master/docs/homeScreenScreenshot.png)
 
->Accueil en mobile
+##### Accueil en mobile
 ![Home on mobile](https://raw.githubusercontent.com/MrZyr0/Projet-PHP/master/docs/homeScreenScreenshotMobile.png)
 
 ## Les fonctionnalitées
@@ -40,3 +40,12 @@ L'outil intègre plusieurs fonctionnalitées :
     2. Créer un match permet de créer un match entre deux des equipes existantes (les équipes créees de base sont celle de l'overwatch league)
 
 2. Le bouton classement permet d'accèder au classement des equipes, par ordre de nombre de victoires, puis de matchs nuls, puis par difference de buts
+
+
+## Crédits
+
+Ce projet à été développé pendant les cours en 1 semaine et demi environ. Malheureusement l'optimisation n'est pas optimale.
+
+* [Romain LOIRE](https://github.com/romL69) : Base de donnée et review du code
+* [Julien SEIXAS](https://github.com/MrZyr0) : PHP & Design
+
